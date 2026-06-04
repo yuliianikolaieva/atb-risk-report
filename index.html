@@ -70,15 +70,18 @@
        background:linear-gradient(90deg,#13203a,#101a30)}
   .clause-no{font-weight:800;font-size:13px;color:var(--accent2);background:#0d1730;border:1px solid var(--line);
        border-radius:8px;padding:5px 10px;white-space:nowrap}
-  .card .title{font-weight:700;font-size:16px;flex:1;min-width:220px}
+  .card .title{font-weight:700;font-size:16px;flex:1;min-width:200px}
   .badge{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:5px 12px;color:#0b1220}
   .b-crit{background:var(--crit)} .b-high{background:var(--high)} .b-med{background:var(--med);color:#3a2c00} .b-low{background:var(--low);color:#06310f}
+  .money-badge{font-size:12.5px;font-weight:800;color:var(--high);background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.5);border-radius:8px;padding:5px 11px;white-space:nowrap}
 
   .card .body{padding:18px 20px}
   .ratings{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
   .rate{background:#0d1730;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;min-width:150px}
   .rate .k{color:var(--muted);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
   .rate .v{font-weight:800;font-size:14px}
+  .rate.money{border-color:rgba(249,115,22,.5);background:rgba(249,115,22,.08)}
+  .rate.money .v{color:var(--high)}
   .v.crit{color:var(--crit)} .v.high{color:var(--high)} .v.med{color:var(--med)} .v.low{color:var(--low)}
 
   .clause-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 16px}
@@ -120,8 +123,7 @@
     <a href="#exposure">Фінансові втрати</a>
     <a href="#summary">Головне</a>
     <a href="#method">Оцінка ризику</a>
-    <a href="#key-risks">Ключові ризики</a>
-    <a href="#moderate-risks">Помірні ризики</a>
+    <a href="#risks">Ризики</a>
     <span class="langtabs"><a class="active" href="index.html">УКР</a><a href="index-en.html">ENG</a></span>
   </div>
 </nav>
@@ -191,13 +193,13 @@
 
   <h3 style="font-size:15px;margin:24px 0 6px">2 · Механізми втрат (за законодавством України, від вартості послуг «ВП»)</h3>
   <table class="matrix" style="font-size:12.5px">
-    <tr><th style="text-align:left">Механізм / пункт</th><th>Підстава</th><th>Формула</th><th>% від ВП</th></tr>
-    <tr><td style="text-align:left">Втрата податкового кредиту з ПДВ (п. 2.1, 5)</td><td>ПДВ 20%</td><td>20% × ВП</td><td>20%</td></tr>
-    <tr><td style="text-align:left">Штраф за заниження ПДВ</td><td>ПКУ, 25–50%</td><td>25% × (20% ВП)</td><td>~5%</td></tr>
-    <tr><td style="text-align:left">Пеня за прострочення</td><td>ПКУ</td><td>~ від суми ПДВ</td><td>~1%</td></tr>
-    <tr><td style="text-align:left">Збільшення бази податку на прибуток (п. 2.1)</td><td>ПнП 18%</td><td>18% × ВП</td><td>18%</td></tr>
-    <tr><td style="text-align:left">Стягнення в дохід держави — нікчемна/фіктивна угода (п. 2.1)</td><td>до 100%</td><td>100% × ВП</td><td>100%</td></tr>
-    <tr><td style="text-align:left"><b>Найгірший випадок, якщо все накладається (за рік)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td></tr>
+    <tr><th style="text-align:left">Механізм / пункт</th><th>Підстава</th><th>Формула</th><th>% від ВП</th><th>€ у 2027 (ВП €400 тис)</th></tr>
+    <tr><td style="text-align:left">Втрата податкового кредиту з ПДВ (п. 2.1, 5)</td><td>ПДВ 20%</td><td>20% × ВП</td><td>20%</td><td>~€80 тис</td></tr>
+    <tr><td style="text-align:left">Штраф за заниження ПДВ</td><td>ПКУ, 25–50%</td><td>25% × (20% ВП)</td><td>~5%</td><td>~€20 тис</td></tr>
+    <tr><td style="text-align:left">Пеня за прострочення</td><td>ПКУ</td><td>~ від суми ПДВ</td><td>~1%</td><td>~€4 тис</td></tr>
+    <tr><td style="text-align:left">Збільшення бази податку на прибуток (п. 2.1)</td><td>ПнП 18%</td><td>18% × ВП</td><td>18%</td><td>~€72 тис</td></tr>
+    <tr><td style="text-align:left">Стягнення в дохід держави — нікчемна/фіктивна угода (п. 2.1)</td><td>до 100%</td><td>100% × ВП</td><td>100%</td><td>~€400 тис</td></tr>
+    <tr><td style="text-align:left"><b>Найгірший випадок, якщо все накладається (за рік)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€576 тис</b></td></tr>
   </table>
 
   <h3 style="font-size:15px;margin:24px 0 6px">3 · Сценарії (2027, комісія 3,33% → ВП ~€400 тис)</h3>
@@ -267,7 +269,7 @@
   <!-- METHODOLOGY -->
   <section id="method">
   <h2 class="section"><span class="bar"></span>Як оцінюється ризик</h2>
-  <p class="section-desc">Кожен пункт оцінюється за <b>Вірогідністю</b> (наскільки ймовірна подія-тригер) × <b>Впливом</b> (фінансова / операційна тяжкість, якщо станеться). Загальний рівень — це поєднання двох.</p>
+  <p class="section-desc">Кожен пункт оцінюється за <b>Вірогідністю</b> (наскільки ймовірна подія-тригер) × <b>Впливом</b> (фінансова / операційна тяжкість, якщо станеться). Загальний рівень — це поєднання двох. Помаранчева плашка у шапці кожного ризику показує орієнтовну втрату в €.</p>
   <table class="matrix">
     <tr><th rowspan="2" colspan="2">Рівень ризику</th><th colspan="3">Вплив →</th></tr>
     <tr><th>Низький</th><th>Середній</th><th>Високий / Критичний</th></tr>
@@ -277,30 +279,32 @@
   </table>
   </section>
 
-  <!-- KEY RISKS -->
-  <section id="key-risks">
-  <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Ключові фінансові ризики</h2>
-  <p class="section-desc">Пункти з найбільшою потенційною фінансовою експозицією для Bolt.</p>
+  <!-- RISKS (ordered Critical -> Low) -->
+  <section id="risks">
+  <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Ризики — від критичного до низького</h2>
+  <p class="section-desc">Усі пункти, позначені аудиторами, відсортовані за рівнем впливу. У шапці кожного — орієнтовна втрата в € (для 2027, виручка ~€400 тис).</p>
 
-  <!-- 1 -->
+  <!-- C1: Clause 2 -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 2</span>
       <span class="title">Виконавець бере на себе всі негативні наслідки та потенційні ризики</span>
       <span class="badge b-crit">Критичний</span>
+      <span class="money-badge">Втрати: до ~€576 тис/рік (необмежено)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня–висока</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v crit">Критичний</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v crit">Критичний</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€576 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>«Виконавець бере на себе відповідальність за всі негативні наслідки та потенційні ризики, що будь-яким чином пов’язані, або можуть бути пов’язані із фінансово-господарськими відносинами між Замовником та Виконавцем за даним Договором.»</p></div>
         <div class="clause-box"><div class="lang">English</div><p>"The Contractor assumes responsibility for all negative consequences and potential risks that are in any way related, or may be related, to the financial and business relations between the Customer and the Contractor under this Agreement."</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Необмежений односторонній перенос податкової та господарської відповідальності на Bolt — відкрите «все охоплююче» зобов’язання.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Необмежена фінансова експозиція для Bolt, без ліміту відповідальності.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Необмежена фінансова експозиція для Bolt, без ліміту відповідальності (найгірший випадок ~€576 тис/рік, але формально без стелі).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Односторонній перенос податкової відповідальності на Bolt → необмежена фінансова експозиція для Bolt.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик і оцінка:</b> Bolt стає квазі-поручителем за податкову експозицію контрагента щодо будь-яких порушень. Це суперечить постанові Верховного Суду від 06.02.2026 (№ 904/2953/24): контрактний перенос публічно-правової / податкової відповідальності <b>недійсний і не породжує правових наслідків</b>. <b>Вірогідність:</b> середня–висока (напр. незареєстрована податкова накладна, що впливає на ПК АТБ, найімовірніше призведе до судового спору).</p></div>
@@ -308,28 +312,30 @@
     </div>
   </div>
 
-  <!-- 2 -->
+  <!-- C2: Clause 2.1 -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 2.1</span>
       <span class="title">Компенсація податків, штрафів, втраченого ПК та стягнення в бюджет</span>
       <span class="badge b-crit">Критичний</span>
+      <span class="money-badge">Втрати: до ~€552 тис/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v crit">Критичний</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v crit">Критичний</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€552 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Нарахування контролюючими органами податків, зборів, штрафних санкцій; зменшення податкового кредиту Замовника з ПДВ за податковими накладними Виконавця; та/або збільшення об’єкта оподаткування з податку на прибуток; або стягнення в дохід держави отриманого за угодою, визнаною недійсною.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Imposition by tax authorities of taxes, fees and penalties; reduction of the Customer's VAT input tax credit based on the Contractor's tax invoices; and/or increase of the Customer's taxable profit base; or a court decision ordering recovery to the state budget of amounts received under an agreement declared invalid.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Компенсація всіх податкових санкцій навіть за відсутності доведеної вини Bolt.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul>
-        <li>Втрачений податковий кредит з ПДВ — <b>20% вартості послуг</b> + штрафи / пеня (додатково до ~25%).</li>
-        <li>Збільшення бази податку на прибуток — <b>18% вартості послуг</b>.</li>
-        <li>Стягнення в дохід держави — потенційно <b>100% виручки Bolt</b> за договором.</li>
+      <div class="impact"><span class="lab">Потенційний вплив (2027, ВП €400 тис)</span><ul>
+        <li>Втрачений ПК з ПДВ — <b>20% вартості послуг ≈ €80 тис</b> + штрафи / пеня (~€24 тис).</li>
+        <li>Збільшення бази податку на прибуток — <b>18% вартості послуг ≈ €72 тис</b>.</li>
+        <li>Стягнення в дохід держави — потенційно <b>100% виручки ≈ €400 тис</b>.</li>
       </ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Замовник визнає, що рішення податкових органів можуть бути визнані незаконними та скасовані; у такому разі повернення Виконавцю можливе, але лише після фактичного повернення коштів з бюджету Замовнику.</p></div>
@@ -338,25 +344,27 @@
     </div>
   </div>
 
-  <!-- 3 -->
+  <!-- C3: Clause 2,4) criminal -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 2, 4)</span>
       <span class="title">Відповідальність через кримінальне провадження (вирок не потрібен)</span>
       <span class="badge b-high">Високий</span>
+      <span class="money-badge">Втрати: призупинення оплат (до ~€400 тис виручки)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">призупинення до ~€400 тис</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Відкриття кримінального провадження, де у будь-якому процесуальному статусі (або без такого) фігурує Виконавець або будь-яка з його посадових осіб (директор, бухгалтер) — за переліком статей Кримінального кодексу.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Negative consequences include the initiation of criminal proceedings in which the Contractor or any of its officers (director / general director, accountant / chief accountant) appears in any procedural status (or without any status).</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Наслідки (призупинення оплат, відповідальність) виникають навіть за відсутності вироку суду.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Репутаційний та операційний ризик; призупинення оплат, доки провадження відкрите.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Немає прямого фіксованого штрафу; основна шкода — призупинення оплат (відтермінування до ~€400 тис виручки/рік) + репутаційний та операційний ризик.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Наслідки навіть за відсутності вироку суду — репутаційний та операційний ризик.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Несприятливі договірні наслідки можуть виникнути вже при <b>відкритті</b> кримінального провадження щодо Bolt або його посадових осіб, незалежно від результату — експозиція до призупинення оплат без чиєїсь кримінальної відповідальності. <b>Вірогідність:</b> середня–висока — провадження в Україні можуть залишатися відкритими тривалий час.</p></div>
@@ -364,51 +372,27 @@
     </div>
   </div>
 
-  <!-- 4 -->
-  <div class="card">
-    <div class="top">
-      <span class="clause-no">Пункт 2.2 / 2.3</span>
-      <span class="title">Призупинення оплат Замовником</span>
-      <span class="badge b-med">Середній–високий</span>
-    </div>
-    <div class="body">
-      <div class="ratings">
-        <div class="rate"><span class="k">Вірогідність</span><span class="v high">Висока</span></div>
-        <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
-        <div class="rate"><span class="k">Загалом</span><span class="v med">Середній–високий</span></div>
-      </div>
-      <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
-      </div>
-      <p class="risk-line"><b>Ризик:</b> Замовник фактично заморожує оплати на власний розсуд, без відповідальності за прострочення.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку — оплати утримуються на невизначений строк.</li></ul></div>
-      <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Призупинення оплат — Замовник фактично заморожує платежі → ризик грошового потоку.</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> АТБ може призупиняти оплати за широко й суб’єктивно визначеними підставами, на <b>невизначений строк, що залежить від третіх осіб</b> (податкова, суди), попри належне виконання з боку Bolt. <b>Вірогідність:</b> висока — поріг для призупинення широкий і суб’єктивний.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5 -->
+  <!-- C4: Clause 5 blocked TI -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 5</span>
       <span class="title">Компенсація ПДВ за заблоковані / зупинені податкові накладні</span>
       <span class="badge b-high">Високий</span>
+      <span class="money-badge">Втрати: ≥€20/документ; до ~€80 тис/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€80 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>У разі зупинки/відмови Замовнику в реєстрації розрахунку коригування (обов’язок реєстрації якого покладено на Замовника) внаслідок зупинки реєстрації податкової накладної — Виконавець сплачує штраф у розмірі ПДВ, але не менше 1 000 грн за кожне порушення.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Compensation of VAT amounts related to blocked tax invoices, despite the Contractor having no actual control over the suspension of tax-invoice registration.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Bolt штрафують за зупинку реєстрації державою — подію повністю поза його контролем.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф у розмірі суми ПДВ у податковій накладній / розрахунку коригування, але <b>не менше 1 000 грн</b> за порушення.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф у розмірі суми ПДВ, але <b>не менше 1 000 грн (~€20)</b> за порушення; сукупно до ~€80 тис/рік (повна сума ПДВ від виручки).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Компенсація ПДВ за заблоковані податкові накладні, попри відсутність у Виконавця реального контролю над зупинкою реєстрації.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Оцінка:</b> Штраф 1% від суми ПДВ (плюс фіксовані суми). <b>Каральний за природою</b> та несумісний з позицією Верховного Суду, наведеною для Пункту 2 (перенос податкової відповідальності недійсний). <b>Вірогідність:</b> середня–висока.</p></div>
@@ -416,25 +400,27 @@
     </div>
   </div>
 
-  <!-- 6 -->
+  <!-- C5: Clause 5 (365 days) -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 5 (365 днів)</span>
       <span class="title">Компенсація за помилки, виявлені після 365 днів</span>
       <span class="badge b-high">Високий</span>
+      <span class="money-badge">Втрати: до ~€80–100 тис/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v low">Низька–середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€80–100 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо на момент виявлення помилки минуло більше 365 днів з дати складення податкової накладної/розрахунку коригування, і це призвело до втрати Замовником податкового кредиту та донарахувань — Виконавець компенсує повну суму втраченого ПК та всі податки, збори, штрафи і пеню.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Where more than 365 days have passed since issuance of the tax invoice / adjustment when an error is identified, and this causes the Customer to lose VAT credit and incur additional assessments, the Contractor must fully compensate the lost VAT credit and all taxes, fees, penalties and interest.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Штрафи за технічні помилки, які жодна зі сторін не виявила вчасно.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>20% вартості послуг</b> (повна сума ПДВ) + штрафи / пеня (додатково ~до 25%).</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>20% вартості послуг ≈ €80 тис</b> (повна сума ПДВ) + штрафи / пеня (~€20 тис).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Штрафи за потенційні технічні помилки, які не були вчасно виявлені ні Виконавцем, ні Замовником.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Оцінка:</b> Те саме занепокоєння, що й щодо інших штрафних пунктів — <b>каральні штрафи</b>, несумісні з позицією Верховного Суду, наведеною для Пункту 2. <b>Вірогідність:</b> середня–висока.</p></div>
@@ -442,57 +428,111 @@
     </div>
   </div>
 
-  <!-- 7 -->
+  <!-- C6: Clause 2.2/2.3 suspension -->
+  <div class="card">
+    <div class="top">
+      <span class="clause-no">Пункт 2.2 / 2.3</span>
+      <span class="title">Призупинення оплат Замовником</span>
+      <span class="badge b-med">Середній–високий</span>
+      <span class="money-badge">Втрати: відтермінування до ~€400 тис виручки</span>
+    </div>
+    <div class="body">
+      <div class="ratings">
+        <div class="rate"><span class="k">Вірогідність</span><span class="v high">Висока</span></div>
+        <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
+        <div class="rate"><span class="k">Загалом</span><span class="v med">Середній–високий</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">відтермінування до ~€400 тис</span></div>
+      </div>
+      <div class="clause-cols">
+        <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
+      </div>
+      <p class="risk-line"><b>Ризик:</b> Замовник фактично заморожує оплати на власний розсуд, без відповідальності за прострочення.</p>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку — оплати (до ~€400 тис виручки/рік) утримуються на невизначений строк.</li></ul></div>
+      <div class="comments">
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Призупинення оплат — Замовник фактично заморожує платежі → ризик грошового потоку.</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> АТБ може призупиняти оплати за широко й суб’єктивно визначеними підставами, на <b>невизначений строк, що залежить від третіх осіб</b> (податкова, суди), попри належне виконання з боку Bolt. <b>Вірогідність:</b> висока — поріг для призупинення широкий і суб’єктивний.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C7: Clause 6 20% -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 6</span>
       <span class="title">20% оплати відтерміновано до реєстрації податкової накладної</span>
       <span class="badge b-med">Середній</span>
+      <span class="money-badge">Втрати: відтермінування ~€80 тис/рік (20%)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v med">Середній</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€80 тис/рік (відтерм.)</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>80% вартості сплачується протягом ___ днів від дати виконання; решта 20% — протягом 3 днів від дати виконання Виконавцем зобов’язання з реєстрації податкових накладних/розрахунків коригування.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>80% of the service value is paid within ___ calendar days of completion; the remaining 20% within 3 days from the date the Contractor registers the tax invoices / adjustment calculations.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> 20% затримується, якщо реєстрацію в Єдиному реєстрі зупинено або відмовлено — хоча Bolt це прямо не контролює.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку на 20% кожної накладної.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку на 20% кожної накладної ≈ <b>~€80 тис/рік</b> (20% від виручки), тимчасово відтерміновано.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Bolt не має прямого контролю над зупинкою чи відмовою в реєстрації податкових накладних в Єдиному реєстрі.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p>Це радше <b>комерційний / бізнес-ризик</b> відтермінування оплат (не юридичний ризик).</p></div>
       </div>
     </div>
   </div>
-  </section>
 
-  <!-- MODERATE RISKS -->
-  <section id="moderate-risks">
-  <h2 class="section"><span class="bar" style="background:var(--med)"></span>Ризики з помірним фінансовим впливом</h2>
-  <p class="section-desc">Адміністративні та операційні обов’язки з фіксованими штрафами.</p>
+  <!-- C8: Clause 4 deadlines -->
+  <div class="card">
+    <div class="top">
+      <span class="clause-no">Пункт 4</span>
+      <span class="title">Скорочені строки реєстрації податкових накладних</span>
+      <span class="badge b-med">Середній</span>
+      <span class="money-badge">Втрати: €20/документ (накопичується)</span>
+    </div>
+    <div class="body">
+      <div class="ratings">
+        <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня–висока</span></div>
+        <div class="rate"><span class="k">Вплив</span><span class="v low">Низький–середній</span></div>
+        <div class="rate"><span class="k">Загалом</span><span class="v med">Середній</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">€20/документ</span></div>
+      </div>
+      <div class="clause-cols">
+        <div class="clause-box"><div class="lang">Українською</div><p>Граничні строки реєстрації: для накладних, складених з 1 по 15 число — до 23 числа того ж місяця; з 16 по останній день — до 7 числа наступного місяця (коротше за законодавчі строки).</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>Registration deadlines: invoices issued on the 1st–15th must be registered by the 23rd of the same month; those issued on the 16th–end of month by the 7th of the following month — significantly shorter than the statutory deadlines.</p></div>
+      </div>
+      <p class="risk-line"><b>Ризик:</b> Суттєво скорочені строки реєстрації порівняно із законодавчими; Bolt може мати додаткові витрати, щоб їх дотриматися.</p>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>1 000 грн (~€20)</b> за кожне порушення (накопичується на кількості накладних), плюс додаткові витрати на пришвидшену реєстрацію.</li></ul></div>
+      <div class="comments">
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Щоб реєструвати податкові накладні в ці строки, Bolt може мати додаткові витрати, пов’язані з реєстрацією.</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Пункт вимагає складати й реєструвати податкові накладні у строки, <b>суворіші за Податковий кодекс</b>, зі штрафами (1% ПДВ + фіксовані суми), які є каральними та несумісними з позицією Верховного Суду, наведеною для Пункту 2. <b>Вірогідність:</b> середня–висока.</p></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- 8 -->
+  <!-- C9: Clause 2.4 quarterly -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 2.4</span>
       <span class="title">Обов’язкова квартальна нотаріальна Заява</span>
-      <span class="badge b-med">Середній</span>
+      <span class="badge b-med">Низький–середній</span>
+      <span class="money-badge">Втрати: €196/випадок (~€0,8 тис/рік)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v high">Висока</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v low">Низький</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v med">Низький–середній</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">€196/випадок</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Виконавець щоквартально, до 25 числа першого місяця наступного кварталу, надає Замовнику Заяву з визначеною інформацією (підпис засвідчується нотаріусом).</p></div>
         <div class="clause-box"><div class="lang">English</div><p>The Contractor must provide the Customer, quarterly and no later than the 25th day of the first month of the following quarter, a Statement containing the requested information.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Додаткове адміністративне навантаження та супутні витрати для Bolt.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Витрати на підготовку інформації + штраф <b>10 000 грн</b> за кожне прострочення / ненадання.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Витрати на підготовку інформації + штраф <b>10 000 грн (~€196)</b> за кожне прострочення / ненадання (до ~€0,8 тис/рік за 4 квартали).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Додаткове адміністративне навантаження та супутні витрати; плюс штраф 10 000 грн за кожне прострочення / ненадання.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Оцінка:</b> Обов’язкове квартальне <b>нотаріальне засвідчення</b> заяви директора створює операційне навантаження, а АТБ може призупинити оплати за її ненадання — суттєвий дисбаланс попри належне виконання. <b>Вірогідність:</b> висока.</p></div>
@@ -500,51 +540,27 @@
     </div>
   </div>
 
-  <!-- 9 -->
-  <div class="card">
-    <div class="top">
-      <span class="clause-no">Пункт 2.5</span>
-      <span class="title">Повідомлення про зміну засновників протягом 10 днів</span>
-      <span class="badge b-low">Низький</span>
-    </div>
-    <div class="body">
-      <div class="ratings">
-        <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня–висока</span></div>
-        <div class="rate"><span class="k">Вплив</span><span class="v low">Низький</span></div>
-        <div class="rate"><span class="k">Загалом</span><span class="v low">Низький</span></div>
-      </div>
-      <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>У разі зміни складу засновників Виконавець зобов’язаний у десятиденний строк письмово сповістити Замовника (інакше штраф 10 000 грн).</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>In the event of any change in the Contractor's founders / shareholders, the Contractor must notify the Customer in writing within ten days (otherwise a UAH 10,000 penalty).</p></div>
-      </div>
-      <p class="risk-line"><b>Ризик:</b> Пропущений строк повідомлення тягне фіксований штраф.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф <b>10 000 грн</b> за кожне порушення.</li></ul></div>
-      <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Зазначено UHY як обов’язок повідомлення (помірний вплив).</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Штраф 10 000 грн за неповідомлення про зміну учасників Bolt Ops UA. <b>Оцінка:</b> Такі зміни рідкісні й публічно доступні через Держреєстр, але все одно створюють додаткове навантаження та відповідальність для Bolt. <b>Вірогідність:</b> середня–висока.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10 -->
+  <!-- C10: Clause 2.6 occupied -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Пункт 2.6</span>
       <span class="title">Зміна податкової адреси протягом 5 днів, якщо на окупованій території</span>
-      <span class="badge b-med">Середній</span>
+      <span class="badge b-med">Низький–середній</span>
+      <span class="money-badge">Втрати: €1 961 + збитки</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v low">Низька</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v med">Низький–середній</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">€1 961 + збитки</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо місцезнаходженням Виконавця виявиться тимчасово окупована територія, він зобов’язаний негайно повідомити Замовника і протягом 5 робочих днів змінити податкову адресу на неокуповану територію.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>If the Contractor's registered location is found to be in temporarily occupied territory, it must immediately inform the Customer and, within 5 business days, change its tax address to non-occupied territory.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Виконати вимогу за 5 робочих днів за таких обставин може бути неможливо.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Компенсація всіх збитків (важко оцінити) + штраф <b>100 000 грн</b>.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Компенсація всіх збитків (важко оцінити) + штраф <b>100 000 грн (~€1 961)</b>.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Потенційний ризик неможливості завершити зміну за 5 робочих днів; порушення тягне збитки + штраф 100 000 грн.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Нерелевантно на практиці</b> — зареєстроване місцезнаходження Bolt завжди було в Києві (неокупована територія).</p></div>
@@ -552,28 +568,30 @@
     </div>
   </div>
 
-  <!-- 11 -->
+  <!-- C11: Clause 2.5 founders -->
   <div class="card">
     <div class="top">
-      <span class="clause-no">Пункт 4</span>
-      <span class="title">Скорочені строки реєстрації податкових накладних</span>
-      <span class="badge b-med">Середній</span>
+      <span class="clause-no">Пункт 2.5</span>
+      <span class="title">Повідомлення про зміну засновників протягом 10 днів</span>
+      <span class="badge b-low">Низький</span>
+      <span class="money-badge">Втрати: €196/випадок</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня–висока</span></div>
-        <div class="rate"><span class="k">Вплив</span><span class="v low">Низький–середній</span></div>
-        <div class="rate"><span class="k">Загалом</span><span class="v med">Середній</span></div>
+        <div class="rate"><span class="k">Вплив</span><span class="v low">Низький</span></div>
+        <div class="rate"><span class="k">Загалом</span><span class="v low">Низький</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">€196/випадок</span></div>
       </div>
       <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>Граничні строки реєстрації: для накладних, складених з 1 по 15 число — до 23 числа того ж місяця; з 16 по останній день — до 7 числа наступного місяця (коротше за законодавчі строки).</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>Registration deadlines: invoices issued on the 1st–15th must be registered by the 23rd of the same month; those issued on the 16th–end of month by the 7th of the following month — significantly shorter than the statutory deadlines.</p></div>
+        <div class="clause-box"><div class="lang">Українською</div><p>У разі зміни складу засновників Виконавець зобов’язаний у десятиденний строк письмово сповістити Замовника (інакше штраф 10 000 грн).</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>In the event of any change in the Contractor's founders / shareholders, the Contractor must notify the Customer in writing within ten days (otherwise a UAH 10,000 penalty).</p></div>
       </div>
-      <p class="risk-line"><b>Ризик:</b> Суттєво скорочені строки реєстрації порівняно із законодавчими; Bolt може мати додаткові витрати, щоб їх дотриматися.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>1 000 грн</b> за кожне порушення, плюс додаткові витрати на пришвидшену реєстрацію податкових накладних.</li></ul></div>
+      <p class="risk-line"><b>Ризик:</b> Пропущений строк повідомлення тягне фіксований штраф.</p>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф <b>10 000 грн (~€196)</b> за кожне порушення.</li></ul></div>
       <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Щоб реєструвати податкові накладні в ці строки, Bolt може мати додаткові витрати, пов’язані з реєстрацією.</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Пункт вимагає складати й реєструвати податкові накладні у строки, <b>суворіші за Податковий кодекс</b>, зі штрафами (1% ПДВ + фіксовані суми), які є каральними та несумісними з позицією Верховного Суду, наведеною для Пункту 2. <b>Вірогідність:</b> середня–висока.</p></div>
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Зазначено UHY як обов’язок повідомлення (помірний вплив).</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Штраф 10 000 грн за неповідомлення про зміну учасників Bolt Ops UA. <b>Оцінка:</b> Такі зміни рідкісні й публічно доступні через Держреєстр, але все одно створюють додаткове навантаження та відповідальність для Bolt. <b>Вірогідність:</b> середня–висока.</p></div>
       </div>
     </div>
   </div>

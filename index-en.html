@@ -69,15 +69,18 @@
        background:linear-gradient(90deg,#13203a,#101a30)}
   .clause-no{font-weight:800;font-size:13px;color:var(--accent2);background:#0d1730;border:1px solid var(--line);
        border-radius:8px;padding:5px 10px;white-space:nowrap}
-  .card .title{font-weight:700;font-size:16px;flex:1;min-width:220px}
+  .card .title{font-weight:700;font-size:16px;flex:1;min-width:200px}
   .badge{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:5px 12px;color:#0b1220}
   .b-crit{background:var(--crit)} .b-high{background:var(--high)} .b-med{background:var(--med);color:#3a2c00} .b-low{background:var(--low);color:#06310f}
+  .money-badge{font-size:12.5px;font-weight:800;color:var(--high);background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.5);border-radius:8px;padding:5px 11px;white-space:nowrap}
 
   .card .body{padding:18px 20px}
   .ratings{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
   .rate{background:#0d1730;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;min-width:150px}
   .rate .k{color:var(--muted);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
   .rate .v{font-weight:800;font-size:14px}
+  .rate.money{border-color:rgba(249,115,22,.5);background:rgba(249,115,22,.08)}
+  .rate.money .v{color:var(--high)}
   .v.crit{color:var(--crit)} .v.high{color:var(--high)} .v.med{color:var(--med)} .v.low{color:var(--low)}
 
   .clause-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 16px}
@@ -119,8 +122,7 @@
     <a href="#exposure">Financial exposure</a>
     <a href="#summary">Summary</a>
     <a href="#method">Risk rating</a>
-    <a href="#key-risks">Key risks</a>
-    <a href="#moderate-risks">Moderate risks</a>
+    <a href="#risks">Risks</a>
     <span class="langtabs"><a href="index.html">УКР</a><a class="active" href="index-en.html">ENG</a></span>
   </div>
 </nav>
@@ -190,13 +192,13 @@
 
   <h3 style="font-size:15px;margin:24px 0 6px">2 · Loss mechanisms (per Ukrainian law, on service value "SV")</h3>
   <table class="matrix" style="font-size:12.5px">
-    <tr><th style="text-align:left">Mechanism / clause</th><th>Legal basis</th><th>Formula</th><th>% of SV</th></tr>
-    <tr><td style="text-align:left">Lost VAT input credit (Cl. 2.1, 5)</td><td>VAT 20%</td><td>20% × SV</td><td>20%</td></tr>
-    <tr><td style="text-align:left">Tax penalty on understated VAT</td><td>Tax Code, 25–50%</td><td>25% × (20% SV)</td><td>~5%</td></tr>
-    <tr><td style="text-align:left">Late-payment interest</td><td>Tax Code</td><td>~ on VAT amount</td><td>~1%</td></tr>
-    <tr><td style="text-align:left">Corporate income tax base increase (Cl. 2.1)</td><td>CIT 18%</td><td>18% × SV</td><td>18%</td></tr>
-    <tr><td style="text-align:left">Recovery to state budget — void / fictitious deal (Cl. 2.1)</td><td>up to 100%</td><td>100% × SV</td><td>100%</td></tr>
-    <tr><td style="text-align:left"><b>Worst case if all stack (full year)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td></tr>
+    <tr><th style="text-align:left">Mechanism / clause</th><th>Legal basis</th><th>Formula</th><th>% of SV</th><th>€ in 2027 (SV €400k)</th></tr>
+    <tr><td style="text-align:left">Lost VAT input credit (Cl. 2.1, 5)</td><td>VAT 20%</td><td>20% × SV</td><td>20%</td><td>~€80k</td></tr>
+    <tr><td style="text-align:left">Tax penalty on understated VAT</td><td>Tax Code, 25–50%</td><td>25% × (20% SV)</td><td>~5%</td><td>~€20k</td></tr>
+    <tr><td style="text-align:left">Late-payment interest</td><td>Tax Code</td><td>~ on VAT amount</td><td>~1%</td><td>~€4k</td></tr>
+    <tr><td style="text-align:left">Corporate income tax base increase (Cl. 2.1)</td><td>CIT 18%</td><td>18% × SV</td><td>18%</td><td>~€72k</td></tr>
+    <tr><td style="text-align:left">Recovery to state budget — void / fictitious deal (Cl. 2.1)</td><td>up to 100%</td><td>100% × SV</td><td>100%</td><td>~€400k</td></tr>
+    <tr><td style="text-align:left"><b>Worst case if all stack (full year)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€576k</b></td></tr>
   </table>
 
   <h3 style="font-size:15px;margin:24px 0 6px">3 · Scenarios (2027, commission 3.33% → SV ~€400k)</h3>
@@ -266,7 +268,7 @@
   <!-- METHODOLOGY -->
   <section id="method">
   <h2 class="section"><span class="bar"></span>How risk is rated</h2>
-  <p class="section-desc">Each clause is scored on <b>Likelihood</b> (how probable the trigger event is) × <b>Impact</b> (financial / operational severity if it occurs). The overall rating is the combination of the two.</p>
+  <p class="section-desc">Each clause is scored on <b>Likelihood</b> (how probable the trigger event is) × <b>Impact</b> (financial / operational severity if it occurs). The overall rating is the combination of the two. The orange badge in each risk header shows the indicative € loss.</p>
   <table class="matrix">
     <tr><th rowspan="2" colspan="2">Risk level</th><th colspan="3">Impact →</th></tr>
     <tr><th>Low</th><th>Medium</th><th>High / Critical</th></tr>
@@ -276,30 +278,32 @@
   </table>
   </section>
 
-  <!-- KEY RISKS -->
-  <section id="key-risks">
-  <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Key financial risks</h2>
-  <p class="section-desc">Clauses with the largest potential financial exposure for Bolt.</p>
+  <!-- RISKS (ordered Critical -> Low) -->
+  <section id="risks">
+  <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Risks — from critical to low</h2>
+  <p class="section-desc">All clauses flagged by the auditors, sorted by impact level. Each header shows the indicative € loss (for 2027, revenue ~€400k).</p>
 
-  <!-- 1 -->
+  <!-- C1: Clause 2 -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 2</span>
       <span class="title">Contractor assumes all negative consequences &amp; potential risks</span>
       <span class="badge b-crit">Critical</span>
+      <span class="money-badge">Loss: up to ~€576k/yr (uncapped)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium–High</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v crit">Critical</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v crit">Critical</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€576k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>«Виконавець бере на себе відповідальність за всі негативні наслідки та потенційні ризики, що будь-яким чином пов’язані, або можуть бути пов’язані із фінансово-господарськими відносинами між Замовником та Виконавцем за даним Договором.»</p></div>
         <div class="clause-box"><div class="lang">English</div><p>"The Contractor assumes responsibility for all negative consequences and potential risks that are in any way related, or may be related, to the financial and business relations between the Customer and the Contractor under this Agreement."</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Unlimited, one-sided allocation of tax and business liability to Bolt — an open-ended "catch-all" obligation.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Unlimited financial exposure for Bolt, with no liability cap.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Unlimited financial exposure for Bolt, with no liability cap (worst case ~€576k/yr, but formally uncapped).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Unlimited allocation of tax liability to Bolt (one-sided risk allocation) → unlimited financial exposure for Bolt.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk &amp; assessment:</b> Bolt becomes a quasi-guarantor of the counterparty's VAT/CIT exposure for any tax irregularities. This contradicts the Supreme Court ruling of 6&nbsp;Feb&nbsp;2026 (case No.&nbsp;904/2953/24): contractual transfer of public-law / tax liability is <b>invalid and produces no legal consequences</b>. <b>Likelihood:</b> Medium–High (e.g. an unregistered VAT invoice affecting ATB's input VAT would likely become litigious).</p></div>
@@ -307,28 +311,30 @@
     </div>
   </div>
 
-  <!-- 2 -->
+  <!-- C2: Clause 2.1 -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 2.1</span>
       <span class="title">Compensation of taxes, penalties, lost VAT credit &amp; budget recovery</span>
       <span class="badge b-crit">Critical</span>
+      <span class="money-badge">Loss: up to ~€552k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v crit">Critical</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v crit">Critical</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€552k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Нарахування контролюючими органами податків, зборів, штрафних санкцій; зменшення податкового кредиту Замовника з ПДВ за податковими накладними Виконавця; та/або збільшення об’єкта оподаткування з податку на прибуток; або стягнення в дохід держави отриманого за угодою, визнаною недійсною.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Imposition by tax authorities of taxes, fees and penalties; reduction of the Customer's VAT input tax credit based on the Contractor's tax invoices; and/or increase of the Customer's taxable profit base; or a court decision ordering recovery to the state budget of amounts received under an agreement declared invalid.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Compensation of all tax penalties even in the absence of proven fault by Bolt.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul>
-        <li>Lost VAT input tax credit — <b>20% of service value</b> + penalties / late-payment interest (additional up to ~25%).</li>
-        <li>Increase of corporate income tax base — <b>18% of service value</b>.</li>
-        <li>Recovery to the state budget — potentially <b>100% of Bolt's revenue</b> under this Agreement.</li>
+      <div class="impact"><span class="lab">Potential impact (2027, SV €400k)</span><ul>
+        <li>Lost VAT input credit — <b>20% of service value ≈ €80k</b> + penalties / interest (~€24k).</li>
+        <li>Increase of CIT base — <b>18% of service value ≈ €72k</b>.</li>
+        <li>Recovery to the state budget — potentially <b>100% of revenue ≈ €400k</b>.</li>
       </ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>The Customer acknowledges that tax-authority decisions may be deemed unlawful and cancelled; in that case reimbursement to the Contractor may apply, but only after the funds are returned by the tax authorities to the Customer.</p></div>
@@ -337,25 +343,27 @@
     </div>
   </div>
 
-  <!-- 3 -->
+  <!-- C3: Clause 2,4) criminal -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 2, 4)</span>
       <span class="title">Liability triggered by criminal proceedings (no verdict required)</span>
       <span class="badge b-high">High</span>
+      <span class="money-badge">Loss: payment suspension (up to ~€400k revenue)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">suspension up to ~€400k</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Відкриття кримінального провадження, де у будь-якому процесуальному статусі (або без такого) фігурує Виконавець або будь-яка з його посадових осіб (директор, бухгалтер) — за переліком статей Кримінального кодексу.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Negative consequences include the initiation of criminal proceedings in which the Contractor or any of its officers (director / general director, accountant / chief accountant) appears in any procedural status (or without any status).</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Consequences (payment suspension, liability) arise even in the absence of a court verdict.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Reputational and operational risk; suspension of payments while proceedings are open.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>No direct fixed penalty; the main harm is suspension of payments (deferral of up to ~€400k revenue/yr) + reputational and operational risk.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Consequences even in the absence of a court verdict — reputational and operational risk.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> Adverse contractual consequences may arise merely upon <b>initiation</b> of criminal proceedings involving Bolt or its officers, irrespective of outcome — exposure to payment suspension without anyone being criminally liable. <b>Likelihood:</b> Medium–High — proceedings in Ukraine may remain open for long periods once initiated.</p></div>
@@ -363,51 +371,27 @@
     </div>
   </div>
 
-  <!-- 4 -->
-  <div class="card">
-    <div class="top">
-      <span class="clause-no">Clause 2.2 / 2.3</span>
-      <span class="title">Suspension of payments by the Customer</span>
-      <span class="badge b-med">Medium–High</span>
-    </div>
-    <div class="body">
-      <div class="ratings">
-        <div class="rate"><span class="k">Likelihood</span><span class="v high">High</span></div>
-        <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
-        <div class="rate"><span class="k">Overall</span><span class="v med">Medium–High</span></div>
-      </div>
-      <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
-      </div>
-      <p class="risk-line"><b>Risk:</b> The Customer effectively freezes payments at its discretion, with no late-payment liability.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk — payments withheld for an indefinite period.</li></ul></div>
-      <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Suspension of payments — the Customer effectively freezes payments → cash-flow risk.</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> ATB may suspend payments on broadly and subjectively defined grounds, for an <b>indefinite period controlled by third parties</b> (tax office, courts), despite proper performance by Bolt. <b>Likelihood:</b> High — the suspension threshold is broad and subjective.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5 -->
+  <!-- C4: Clause 5 blocked TI -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 5</span>
       <span class="title">VAT compensation for blocked / suspended tax invoices</span>
       <span class="badge b-high">High</span>
+      <span class="money-badge">Loss: ≥€20/doc; up to ~€80k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€80k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>У разі зупинки/відмови Замовнику в реєстрації розрахунку коригування (обов’язок реєстрації якого покладено на Замовника) внаслідок зупинки реєстрації податкової накладної — Виконавець сплачує штраф у розмірі ПДВ, але не менше 1 000 грн за кожне порушення.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Compensation of VAT amounts related to blocked tax invoices, despite the Contractor having no actual control over the suspension of tax-invoice registration.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Bolt is penalised for the state's suspension of registration — an event entirely outside its control.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>A penalty equal to the VAT amount in the tax invoice / adjustment calculation, but <b>not less than UAH 1,000</b> per breach.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>A penalty equal to the VAT amount, but <b>not less than UAH 1,000 (~€20)</b> per breach; cumulatively up to ~€80k/yr (full VAT on revenue).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Compensation of VAT for blocked tax invoices, despite the Contractor having no actual control over the suspension of registration.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Assessment:</b> Penalty of 1% of the VAT obligation (plus fixed amounts). <b>Punitive in nature</b> and inconsistent with the Supreme Court position cited for Clause&nbsp;2 (transfer of tax liability is invalid). <b>Likelihood:</b> Medium–High.</p></div>
@@ -415,25 +399,27 @@
     </div>
   </div>
 
-  <!-- 6 -->
+  <!-- C5: Clause 5 (365 days) -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 5 (365 days)</span>
       <span class="title">Compensation for errors found after 365 days</span>
       <span class="badge b-high">High</span>
+      <span class="money-badge">Loss: up to ~€80–100k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v low">Low–Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€80–100k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо на момент виявлення помилки минуло більше 365 днів з дати складення податкової накладної/розрахунку коригування, і це призвело до втрати Замовником податкового кредиту та донарахувань — Виконавець компенсує повну суму втраченого ПК та всі податки, збори, штрафи і пеню.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Where more than 365 days have passed since issuance of the tax invoice / adjustment when an error is identified, and this causes the Customer to lose VAT credit and incur additional assessments, the Contractor must fully compensate the lost VAT credit and all taxes, fees, penalties and interest.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Penalties for technical errors not identified in time by either party.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>20% of service value</b> (full VAT amount) + penalties / late-payment interest (additional ~up to 25%).</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>20% of service value ≈ €80k</b> (full VAT amount) + penalties / interest (~€20k).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Penalties for potential technical errors which were not identified in time by either the Contractor or the Customer.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Assessment:</b> Same concern as the other penalty clauses — <b>punitive penalties</b> inconsistent with the Supreme Court position cited for Clause&nbsp;2. <b>Likelihood:</b> Medium–High.</p></div>
@@ -441,57 +427,111 @@
     </div>
   </div>
 
-  <!-- 7 -->
+  <!-- C6: Clause 2.2/2.3 suspension -->
+  <div class="card">
+    <div class="top">
+      <span class="clause-no">Clause 2.2 / 2.3</span>
+      <span class="title">Suspension of payments by the Customer</span>
+      <span class="badge b-med">Medium–High</span>
+      <span class="money-badge">Loss: deferral up to ~€400k revenue</span>
+    </div>
+    <div class="body">
+      <div class="ratings">
+        <div class="rate"><span class="k">Likelihood</span><span class="v high">High</span></div>
+        <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
+        <div class="rate"><span class="k">Overall</span><span class="v med">Medium–High</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">deferral up to ~€400k</span></div>
+      </div>
+      <div class="clause-cols">
+        <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
+      </div>
+      <p class="risk-line"><b>Risk:</b> The Customer effectively freezes payments at its discretion, with no late-payment liability.</p>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk — payments (up to ~€400k revenue/yr) withheld for an indefinite period.</li></ul></div>
+      <div class="comments">
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Suspension of payments — the Customer effectively freezes payments → cash-flow risk.</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> ATB may suspend payments on broadly and subjectively defined grounds, for an <b>indefinite period controlled by third parties</b> (tax office, courts), despite proper performance by Bolt. <b>Likelihood:</b> High — the suspension threshold is broad and subjective.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C7: Clause 6 20% -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 6</span>
       <span class="title">20% of payment deferred until tax-invoice registration</span>
       <span class="badge b-med">Medium</span>
+      <span class="money-badge">Loss: deferral ~€80k/yr (20%)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v med">Medium</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€80k/yr (deferral)</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>80% вартості сплачується протягом ___ днів від дати виконання; решта 20% — протягом 3 днів від дати виконання Виконавцем зобов’язання з реєстрації податкових накладних/розрахунків коригування.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>80% of the service value is paid within ___ calendar days of completion; the remaining 20% within 3 days from the date the Contractor registers the tax invoices / adjustment calculations.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> The 20% is delayed if registration in the Unified Register is suspended or refused — even though Bolt has no direct control over that.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk on 20% of every invoice.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk on 20% of every invoice ≈ <b>~€80k/yr</b> (20% of revenue), temporarily deferred.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Bolt has no direct control over the occurrence of suspension or refusal of tax-invoice registration in the Unified Register.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p>This is rather a <b>commercial / business risk</b> of postponed payment terms (not a legal risk).</p></div>
       </div>
     </div>
   </div>
-  </section>
 
-  <!-- MODERATE RISKS -->
-  <section id="moderate-risks">
-  <h2 class="section"><span class="bar" style="background:var(--med)"></span>Risks with moderate financial impact</h2>
-  <p class="section-desc">Administrative and operational obligations carrying fixed penalties.</p>
+  <!-- C8: Clause 4 deadlines -->
+  <div class="card">
+    <div class="top">
+      <span class="clause-no">Clause 4</span>
+      <span class="title">Shortened tax-invoice registration deadlines</span>
+      <span class="badge b-med">Medium</span>
+      <span class="money-badge">Loss: €20/doc (accumulates)</span>
+    </div>
+    <div class="body">
+      <div class="ratings">
+        <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium–High</span></div>
+        <div class="rate"><span class="k">Impact</span><span class="v low">Low–Medium</span></div>
+        <div class="rate"><span class="k">Overall</span><span class="v med">Medium</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">€20/doc</span></div>
+      </div>
+      <div class="clause-cols">
+        <div class="clause-box"><div class="lang">Українською</div><p>Граничні строки реєстрації: для накладних, складених з 1 по 15 число — до 23 числа того ж місяця; з 16 по останній день — до 7 числа наступного місяця (коротше за законодавчі строки).</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>Registration deadlines: invoices issued on the 1st–15th must be registered by the 23rd of the same month; those issued on the 16th–end of month by the 7th of the following month — significantly shorter than the statutory deadlines.</p></div>
+      </div>
+      <p class="risk-line"><b>Risk:</b> Significantly shortened registration deadlines vs. statutory ones; Bolt may incur extra costs to meet them.</p>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>UAH 1,000 (~€20)</b> per breach (accumulates across the number of invoices), plus extra costs for faster registration.</li></ul></div>
+      <div class="comments">
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>To register tax invoices within these deadlines, Bolt may incur additional costs related to registration.</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> The clause requires issuing and registering VAT invoices within deadlines <b>stricter than the Tax Code</b>, with penalties (1% of VAT + fixed amounts) that are punitive and inconsistent with the Supreme Court position cited for Clause&nbsp;2. <b>Likelihood:</b> Medium–High.</p></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- 8 -->
+  <!-- C9: Clause 2.4 quarterly -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 2.4</span>
       <span class="title">Mandatory quarterly notarised Statement</span>
-      <span class="badge b-med">Medium</span>
+      <span class="badge b-med">Low–Medium</span>
+      <span class="money-badge">Loss: €196/case (~€0.8k/yr)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v low">Low</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v med">Low–Medium</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">€196/case</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Виконавець щоквартально, до 25 числа першого місяця наступного кварталу, надає Замовнику Заяву з визначеною інформацією (підпис засвідчується нотаріусом).</p></div>
         <div class="clause-box"><div class="lang">English</div><p>The Contractor must provide the Customer, quarterly and no later than the 25th day of the first month of the following quarter, a Statement containing the requested information.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Additional administrative burden and related costs for Bolt.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cost of preparing information + a penalty of <b>UAH 10,000</b> for each delay / non-provision.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cost of preparing information + a penalty of <b>UAH 10,000 (~€196)</b> for each delay / non-provision (up to ~€0.8k/yr over 4 quarters).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Additional administrative burden and related costs; plus a UAH 10,000 penalty per delay / non-provision.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Assessment:</b> Mandatory quarterly <b>notarisation</b> of the director's statement imposes an operational burden, and ATB may suspend payments if it is not produced — substantial imbalance despite proper performance. <b>Likelihood:</b> High.</p></div>
@@ -499,51 +539,27 @@
     </div>
   </div>
 
-  <!-- 9 -->
-  <div class="card">
-    <div class="top">
-      <span class="clause-no">Clause 2.5</span>
-      <span class="title">Notify any change of founders / shareholders within 10 days</span>
-      <span class="badge b-low">Low</span>
-    </div>
-    <div class="body">
-      <div class="ratings">
-        <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium–High</span></div>
-        <div class="rate"><span class="k">Impact</span><span class="v low">Low</span></div>
-        <div class="rate"><span class="k">Overall</span><span class="v low">Low</span></div>
-      </div>
-      <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>У разі зміни складу засновників Виконавець зобов’язаний у десятиденний строк письмово сповістити Замовника (інакше штраф 10 000 грн).</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>In the event of any change in the Contractor's founders / shareholders, the Contractor must notify the Customer in writing within ten days (otherwise a UAH 10,000 penalty).</p></div>
-      </div>
-      <p class="risk-line"><b>Risk:</b> Missed notification deadline triggers a fixed penalty.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Penalty of <b>UAH 10,000</b> per breach.</li></ul></div>
-      <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Listed by UHY as a notification obligation (moderate impact).</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> UAH 10,000 penalty for failure to notify a change of Bolt Ops UA's shareholders. <b>Assessment:</b> Such changes are rare and publicly available via the State Register, yet still create additional burden and liability for Bolt. <b>Likelihood:</b> Medium–High.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10 -->
+  <!-- C10: Clause 2.6 occupied -->
   <div class="card">
     <div class="top">
       <span class="clause-no">Clause 2.6</span>
       <span class="title">Change tax address within 5 days if located in occupied territory</span>
-      <span class="badge b-med">Medium</span>
+      <span class="badge b-med">Low–Medium</span>
+      <span class="money-badge">Loss: €1,961 + damages</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v low">Low</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v med">Low–Medium</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">€1,961 + damages</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо місцезнаходженням Виконавця виявиться тимчасово окупована територія, він зобов’язаний негайно повідомити Замовника і протягом 5 робочих днів змінити податкову адресу на неокуповану територію.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>If the Contractor's registered location is found to be in temporarily occupied territory, it must immediately inform the Customer and, within 5 business days, change its tax address to non-occupied territory.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Compliance within 5 business days may be impossible in such circumstances.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Compensation of all damages (hard to quantify) + a penalty of <b>UAH 100,000</b>.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Compensation of all damages (hard to quantify) + a penalty of <b>UAH 100,000 (~€1,961)</b>.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Potential risk of being unable to complete the change within 5 business days; breach triggers damages + UAH 100,000 penalty.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Not relevant in practice</b> — Bolt's registered seat has always been Kyiv (non-occupied territory).</p></div>
@@ -551,28 +567,30 @@
     </div>
   </div>
 
-  <!-- 11 -->
+  <!-- C11: Clause 2.5 founders -->
   <div class="card">
     <div class="top">
-      <span class="clause-no">Clause 4</span>
-      <span class="title">Shortened tax-invoice registration deadlines</span>
-      <span class="badge b-med">Medium</span>
+      <span class="clause-no">Clause 2.5</span>
+      <span class="title">Notify any change of founders / shareholders within 10 days</span>
+      <span class="badge b-low">Low</span>
+      <span class="money-badge">Loss: €196/case</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium–High</span></div>
-        <div class="rate"><span class="k">Impact</span><span class="v low">Low–Medium</span></div>
-        <div class="rate"><span class="k">Overall</span><span class="v med">Medium</span></div>
+        <div class="rate"><span class="k">Impact</span><span class="v low">Low</span></div>
+        <div class="rate"><span class="k">Overall</span><span class="v low">Low</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">€196/case</span></div>
       </div>
       <div class="clause-cols">
-        <div class="clause-box"><div class="lang">Українською</div><p>Граничні строки реєстрації: для накладних, складених з 1 по 15 число — до 23 числа того ж місяця; з 16 по останній день — до 7 числа наступного місяця (коротше за законодавчі строки).</p></div>
-        <div class="clause-box"><div class="lang">English</div><p>Registration deadlines: invoices issued on the 1st–15th must be registered by the 23rd of the same month; those issued on the 16th–end of month by the 7th of the following month — significantly shorter than the statutory deadlines.</p></div>
+        <div class="clause-box"><div class="lang">Українською</div><p>У разі зміни складу засновників Виконавець зобов’язаний у десятиденний строк письмово сповістити Замовника (інакше штраф 10 000 грн).</p></div>
+        <div class="clause-box"><div class="lang">English</div><p>In the event of any change in the Contractor's founders / shareholders, the Contractor must notify the Customer in writing within ten days (otherwise a UAH 10,000 penalty).</p></div>
       </div>
-      <p class="risk-line"><b>Risk:</b> Significantly shortened registration deadlines vs. statutory ones; Bolt may incur extra costs to meet them.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>UAH 1,000</b> per breach, plus additional costs related to faster registration of tax invoices.</li></ul></div>
+      <p class="risk-line"><b>Risk:</b> Missed notification deadline triggers a fixed penalty.</p>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Penalty of <b>UAH 10,000 (~€196)</b> per breach.</li></ul></div>
       <div class="comments">
-        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>To register tax invoices within these deadlines, Bolt may incur additional costs related to registration.</p></div>
-        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> The clause requires issuing and registering VAT invoices within deadlines <b>stricter than the Tax Code</b>, with penalties (1% of VAT + fixed amounts) that are punitive and inconsistent with the Supreme Court position cited for Clause&nbsp;2. <b>Likelihood:</b> Medium–High.</p></div>
+        <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Listed by UHY as a notification obligation (moderate impact).</p></div>
+        <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> UAH 10,000 penalty for failure to notify a change of Bolt Ops UA's shareholders. <b>Assessment:</b> Such changes are rare and publicly available via the State Register, yet still create additional burden and liability for Bolt. <b>Likelihood:</b> Medium–High.</p></div>
       </div>
     </div>
   </div>
