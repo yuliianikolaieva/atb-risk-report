@@ -73,6 +73,10 @@
   .badge{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:5px 12px;color:#0b1220}
   .b-crit{background:var(--crit)} .b-high{background:var(--high)} .b-med{background:var(--med);color:#3a2c00} .b-low{background:var(--low);color:#06310f}
   .money-badge{font-size:12.5px;font-weight:800;color:var(--high);background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.5);border-radius:8px;padding:5px 11px;white-space:nowrap}
+  .comment-btn{font-size:11.5px;font-weight:700;color:var(--accent2);background:#0d1730;border:1px solid var(--line);border-radius:8px;padding:5px 10px;text-decoration:none;white-space:nowrap}
+  .comment-btn:hover{background:#13203a;color:#fff}
+  .fab-comment{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--accent);color:#fff;font-weight:800;font-size:13px;padding:12px 17px;border-radius:999px;text-decoration:none;box-shadow:0 6px 22px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18)}
+  .fab-comment:hover{filter:brightness(1.12)}
 
   .card .body{padding:18px 20px}
   .ratings{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
@@ -853,5 +857,40 @@
   </footer>
 
 </div>
+
+<a class="fab-comment" id="fabComment" href="#">Leave a comment</a>
+
+<script>
+(function(){
+  var TO = 'anna.kalabska@bolt.eu';
+  var CC = 'Vyacheslav.Levchenko@bolt.eu';
+  function mailto(subject, body){
+    return 'mailto:' + TO + '?cc=' + CC +
+      '&subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  }
+  var fab = document.getElementById('fabComment');
+  if (fab) {
+    fab.href = mailto(
+      'ATB Risk Report — general comment',
+      'My comment on the ATB Additional Agreement report:\n\n'
+    );
+  }
+  document.querySelectorAll('.card .top').forEach(function(top){
+    var noEl = top.querySelector('.clause-no');
+    var titleEl = top.querySelector('.title');
+    var no = noEl ? noEl.textContent.trim() : '';
+    var title = titleEl ? titleEl.textContent.trim() : '';
+    var a = document.createElement('a');
+    a.className = 'comment-btn';
+    a.textContent = 'Comment';
+    a.href = mailto(
+      'ATB Risk Report — ' + no + ': ' + title,
+      'Clause: ' + no + ' — ' + title + '\n\nMy comment:\n'
+    );
+    top.appendChild(a);
+  });
+})();
+</script>
 </body>
 </html>
