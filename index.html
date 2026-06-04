@@ -74,10 +74,32 @@
   .badge{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:5px 12px;color:#0b1220}
   .b-crit{background:var(--crit)} .b-high{background:var(--high)} .b-med{background:var(--med);color:#3a2c00} .b-low{background:var(--low);color:#06310f}
   .money-badge{font-size:12.5px;font-weight:800;color:var(--high);background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.5);border-radius:8px;padding:5px 11px;white-space:nowrap}
-  .comment-btn{font-size:11.5px;font-weight:700;color:var(--accent2);background:#0d1730;border:1px solid var(--line);border-radius:8px;padding:5px 10px;text-decoration:none;white-space:nowrap}
+  .comment-btn{font-size:11.5px;font-weight:700;color:var(--accent2);background:#0d1730;border:1px solid var(--line);border-radius:8px;padding:5px 10px;text-decoration:none;white-space:nowrap;cursor:pointer;font-family:inherit}
   .comment-btn:hover{background:#13203a;color:#fff}
   .fab-comment{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--accent);color:#fff;font-weight:800;font-size:13px;padding:12px 17px;border-radius:999px;text-decoration:none;box-shadow:0 6px 22px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18)}
   .fab-comment:hover{filter:brightness(1.12)}
+  .cmt-count{display:none;min-width:16px;text-align:center;background:var(--accent);color:#fff;border-radius:999px;font-size:10px;font-weight:800;padding:1px 5px;margin-left:5px}
+  .cmt-drawer{position:fixed;top:0;right:0;height:100%;width:380px;max-width:92vw;background:#0c1424;border-left:1px solid var(--line);box-shadow:-8px 0 30px rgba(0,0,0,.5);z-index:80;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column}
+  .cmt-drawer.open{transform:translateX(0)}
+  .cmt-head{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .cmt-head h3{margin:0;font-size:15px;flex:1}
+  .cmt-close{background:#13203a;border:1px solid var(--line);color:var(--soft);border-radius:8px;padding:2px 11px;cursor:pointer;font-size:18px;line-height:1.2}
+  .cmt-body{padding:14px 18px;overflow-y:auto;flex:1}
+  .cmt-field{width:100%;background:#0d1730;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:9px 11px;font-size:13px;font-family:inherit}
+  .cmt-field:focus{outline:none;border-color:var(--accent)}
+  .cmt-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;margin:12px 0 5px;display:block}
+  textarea.cmt-field{min-height:88px;resize:vertical}
+  .cmt-add{margin-top:10px;width:100%;background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+  .cmt-add:hover{filter:brightness(1.1)}
+  .cmt-list{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+  .cmt-item{background:#101a30;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .cmt-item .meta{font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between;gap:8px}
+  .cmt-item .txt{font-size:13px;color:var(--soft);white-space:pre-wrap}
+  .cmt-item .del{background:none;border:none;color:#ef6b6b;cursor:pointer;font-size:11px;font-family:inherit}
+  .cmt-empty{color:var(--muted);font-size:13px;font-style:italic;margin-top:14px}
+  .cmt-foot{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:8px}
+  .cmt-foot button{flex:1;background:#13203a;border:1px solid var(--line);color:var(--soft);border-radius:8px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+  .cmt-foot button:hover{color:#fff}
 
   .card .body{padding:18px 20px}
   .ratings{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
@@ -859,40 +881,113 @@
 
 </div>
 
-<a class="fab-comment" id="fabComment" href="#">Залишити коментар</a>
+<a class="fab-comment" id="fabComment" href="#">Коментарі</a>
+
+<div class="cmt-drawer" id="cmtDrawer" aria-hidden="true">
+  <div class="cmt-head">
+    <h3 id="cmtTitle">Коментарі</h3>
+    <button class="cmt-close" id="cmtClose" title="Закрити">×</button>
+  </div>
+  <div class="cmt-body">
+    <label class="cmt-label" for="cmtSelect">Пункт</label>
+    <select class="cmt-field" id="cmtSelect"></select>
+    <label class="cmt-label" for="cmtName">Ваше ім'я</label>
+    <input class="cmt-field" id="cmtName" placeholder="Ім'я / посада">
+    <label class="cmt-label" for="cmtText">Новий коментар</label>
+    <textarea class="cmt-field" id="cmtText" placeholder="Напишіть коментар…"></textarea>
+    <button class="cmt-add" id="cmtAdd">Додати коментар</button>
+    <div class="cmt-list" id="cmtList"></div>
+    <div class="cmt-empty" id="cmtEmpty">Поки що коментарів немає.</div>
+  </div>
+  <div class="cmt-foot">
+    <button id="cmtExport">Експорт (.txt)</button>
+    <button id="cmtEmail">Надіслати на пошту</button>
+  </div>
+</div>
 
 <script>
 (function(){
-  var TO = 'anna.kalabska@bolt.eu';
-  var CC = 'Vyacheslav.Levchenko@bolt.eu';
-  function mailto(subject, body){
-    return 'mailto:' + TO + '?cc=' + CC +
-      '&subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
+  var STORAGE='atb_comments_v1', AUTHORK='atb_comment_author';
+  var TO='anna.kalabska@bolt.eu', CC='Vyacheslav.Levchenko@bolt.eu';
+  var L={general:'Загальний коментар', you:'Анонім', confirmDel:'Видалити цей коментар?', titlePrefix:'Коментарі: '};
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  function load(){ try{return JSON.parse(localStorage.getItem(STORAGE))||{};}catch(e){return {};} }
+  function save(o){ try{localStorage.setItem(STORAGE, JSON.stringify(o));}catch(e){} }
+  function labelFor(i){
+    var c=cards[i], no=c.querySelector('.clause-no'), t=c.querySelector('.title');
+    return (no?no.textContent.trim():('#'+(i+1)))+' — '+(t?t.textContent.trim():'');
   }
-  // General comment (floating button)
-  var fab = document.getElementById('fabComment');
-  if (fab) {
-    fab.href = mailto(
-      'ATB Risk Report — загальний коментар',
-      'Мій коментар до звіту по Додатковій угоді з АТБ:\n\n'
-    );
+  function fmt(ts){ try{return new Date(ts).toLocaleString();}catch(e){return '';} }
+  var drawer=document.getElementById('cmtDrawer'),
+      sel=document.getElementById('cmtSelect'),
+      list=document.getElementById('cmtList'),
+      empty=document.getElementById('cmtEmpty'),
+      nameI=document.getElementById('cmtName'),
+      textI=document.getElementById('cmtText'),
+      title=document.getElementById('cmtTitle');
+  var optG=document.createElement('option'); optG.value='general'; optG.textContent=L.general; sel.appendChild(optG);
+  cards.forEach(function(c,i){ var o=document.createElement('option'); o.value=String(i); o.textContent=labelFor(i); sel.appendChild(o); });
+  nameI.value=localStorage.getItem(AUTHORK)||'';
+  var current='general';
+  function render(){
+    var data=load(), arr=data[current]||[];
+    list.innerHTML=''; empty.style.display=arr.length?'none':'block';
+    arr.forEach(function(c,idx){
+      var it=document.createElement('div'); it.className='cmt-item';
+      var meta=document.createElement('div'); meta.className='meta';
+      var who=document.createElement('span'); who.textContent=(c.name||L.you)+' · '+fmt(c.ts);
+      var del=document.createElement('button'); del.className='del'; del.textContent='видалити';
+      del.onclick=function(){ if(confirm(L.confirmDel)){ var d=load(); d[current].splice(idx,1); save(d); render(); counts(); } };
+      meta.appendChild(who); meta.appendChild(del);
+      var tx=document.createElement('div'); tx.className='txt'; tx.textContent=c.text;
+      it.appendChild(meta); it.appendChild(tx); list.appendChild(it);
+    });
+    title.textContent = current==='general'? L.general : (L.titlePrefix+labelFor(+current).split(' — ')[0]);
   }
-  // Per-clause comment buttons
-  document.querySelectorAll('.card .top').forEach(function(top){
-    var noEl = top.querySelector('.clause-no');
-    var titleEl = top.querySelector('.title');
-    var no = noEl ? noEl.textContent.trim() : '';
-    var title = titleEl ? titleEl.textContent.trim() : '';
-    var a = document.createElement('a');
-    a.className = 'comment-btn';
-    a.textContent = 'Коментар';
-    a.href = mailto(
-      'ATB Risk Report — ' + no + ': ' + title,
-      'Пункт: ' + no + ' — ' + title + '\n\nМій коментар:\n'
-    );
-    top.appendChild(a);
+  function counts(){
+    var data=load();
+    cards.forEach(function(c,i){
+      var b=c.querySelector('.comment-btn .cmt-count'); if(!b) return;
+      var n=(data[String(i)]||[]).length; b.textContent=n; b.style.display=n?'inline-block':'none';
+    });
+  }
+  function open(key){ current=String(key); sel.value=current; render(); drawer.classList.add('open'); }
+  document.getElementById('cmtClose').onclick=function(){ drawer.classList.remove('open'); };
+  document.getElementById('fabComment').onclick=function(e){ e.preventDefault(); open('general'); };
+  sel.onchange=function(){ current=sel.value; render(); };
+  document.getElementById('cmtAdd').onclick=function(){
+    var t=textI.value.trim(); if(!t) return;
+    var nm=nameI.value.trim(); localStorage.setItem(AUTHORK, nm);
+    var d=load(); (d[current]=d[current]||[]).push({name:nm, text:t, ts:Date.now()}); save(d);
+    textI.value=''; render(); counts();
+  };
+  cards.forEach(function(c,i){
+    var top=c.querySelector('.top'); if(!top) return;
+    var b=document.createElement('button'); b.className='comment-btn';
+    b.innerHTML='Коментар <span class="cmt-count"></span>';
+    b.onclick=function(){ open(i); };
+    top.appendChild(b);
   });
+  function allText(){
+    var d=load(), out=[];
+    ['general'].concat(cards.map(function(_,i){return String(i);})).forEach(function(k){
+      var arr=d[k]; if(!arr||!arr.length) return;
+      out.push('=== '+(k==='general'?L.general:labelFor(+k))+' ===');
+      arr.forEach(function(c){ out.push('['+fmt(c.ts)+'] '+(c.name||L.you)+': '+c.text); });
+      out.push('');
+    });
+    return out.join('\n');
+  }
+  document.getElementById('cmtExport').onclick=function(){
+    var txt=allText()||'(немає коментарів)';
+    var blob=new Blob([txt],{type:'text/plain;charset=utf-8'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='atb-comments.txt'; a.click();
+  };
+  document.getElementById('cmtEmail').onclick=function(){
+    var txt=allText()||'(немає коментарів)';
+    window.location.href='mailto:'+TO+'?cc='+CC+'&subject='+encodeURIComponent('ATB Risk Report — коментарі')+'&body='+encodeURIComponent(txt);
+  };
+  counts();
 })();
 </script>
 </body>
