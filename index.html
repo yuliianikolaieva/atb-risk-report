@@ -155,6 +155,73 @@
     </ul>
   </div>
 
+  <!-- FINANCIAL EXPOSURE -->
+  <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Financial exposure — €, indicative</h2>
+  <p class="section-desc">Estimated monetary losses if the penalty / compensation clauses are triggered, under Ukrainian tax law, benchmarked against GMV.</p>
+
+  <div class="callout" style="border-left-color:var(--high)">
+    <h3>Important: the penalty base is "service value", not GMV</h3>
+    <ul>
+      <li>Almost every penalty and tax compensation in the Agreement is calculated on the <b>service value</b> — i.e. the fees ATB pays Bolt (Bolt's revenue from the deal), <b>not</b> the €12M GMV (grocery sales).</li>
+      <li>So the exposure scales with Bolt's <b>take rate</b> (commission as % of GMV). The tables below show a sensitivity for 10–25%. <b>Confirm the actual take rate and the figures resolve to a single column.</b></li>
+    </ul>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 6px">Assumptions</h3>
+  <div class="meta">
+    <span class="pill">FX: €1 ≈ UAH 45</span>
+    <span class="pill">VAT: 20%</span>
+    <span class="pill">Corporate income tax: 18%</span>
+    <span class="pill">Tax understatement penalty: 25% (50% if repeated)</span>
+    <span class="pill">GMV 2026 ~€4M · 2027 ~€12M</span>
+  </div>
+
+  <h3 style="font-size:15px;margin:24px 0 6px">1 · Service value (Bolt revenue) = penalty base</h3>
+  <table class="matrix">
+    <tr><th>Take rate (commission)</th><th>Service value 2026<br>(GMV €4M)</th><th>Service value 2027<br>(GMV €12M)</th></tr>
+    <tr><td class="axis">10%</td><td>€0.40M</td><td>€1.20M</td></tr>
+    <tr><td class="axis">15%</td><td>€0.60M</td><td>€1.80M</td></tr>
+    <tr><td class="axis">20% (used below)</td><td class="cell-med">€0.80M</td><td class="cell-med">€2.40M</td></tr>
+    <tr><td class="axis">25%</td><td>€1.00M</td><td>€3.00M</td></tr>
+  </table>
+
+  <h3 style="font-size:15px;margin:24px 0 6px">2 · Loss mechanisms (per Ukrainian law, on service value "SV")</h3>
+  <table class="matrix" style="font-size:12.5px">
+    <tr><th style="text-align:left">Mechanism / clause</th><th>Legal basis</th><th>Formula</th><th>% of SV</th></tr>
+    <tr><td style="text-align:left">Lost VAT input credit (Cl. 2.1, 5)</td><td>VAT 20%</td><td>20% × SV</td><td>20%</td></tr>
+    <tr><td style="text-align:left">Tax penalty on understated VAT</td><td>Tax Code, 25–50%</td><td>25% × (20% SV)</td><td>~5%</td></tr>
+    <tr><td style="text-align:left">Late-payment interest (пеня)</td><td>Tax Code</td><td>~ on VAT amount</td><td>~1%</td></tr>
+    <tr><td style="text-align:left">Corporate income tax base increase (Cl. 2.1)</td><td>CIT 18%</td><td>18% × SV</td><td>18%</td></tr>
+    <tr><td style="text-align:left">Recovery to state budget — void / fictitious deal (Cl. 2.1)</td><td>up to 100%</td><td>100% × SV</td><td>100%</td></tr>
+    <tr><td style="text-align:left"><b>Worst case if all stack (full year)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td></tr>
+  </table>
+
+  <h3 style="font-size:15px;margin:24px 0 6px">3 · Scenarios (2027, take rate 20% → SV €2.4M)</h3>
+  <table class="matrix" style="font-size:12.5px">
+    <tr><th style="text-align:left">Scenario</th><th>Estimated loss</th><th>% of Bolt revenue</th><th>% of GMV</th></tr>
+    <tr><td style="text-align:left">① Administrative / contractual penalties only<br><span style="color:var(--muted)">late registration, missing statements, naming mismatches</span></td><td class="cell-low">€30k–150k / yr</td><td>1–6%</td><td>&lt;1%</td></tr>
+    <tr><td style="text-align:left">② Partial tax reassessment<br><span style="color:var(--muted)">ATB loses VAT credit on part of invoices + penalties + CIT</span></td><td class="cell-med">€250k–700k / yr</td><td>10–30%</td><td>2–6%</td></tr>
+    <tr><td style="text-align:left">③ Worst case — deal declared void / fictitious<br><span style="color:var(--muted)">budget recovery + VAT + CIT + penalties</span></td><td class="cell-crit"><b>~€3.5M / yr</b></td><td><b>~145%</b></td><td>~29%</td></tr>
+  </table>
+
+  <h3 style="font-size:15px;margin:24px 0 6px">4 · Worst case by take rate (2027)</h3>
+  <table class="matrix">
+    <tr><th>Take rate</th><th>10%</th><th>15%</th><th>20%</th><th>25%</th></tr>
+    <tr><td class="axis">Worst-case loss (≈1.44 × SV)</td><td>€1.7M</td><td>€2.6M</td><td class="cell-crit">€3.5M</td><td>€4.3M</td></tr>
+    <tr><td class="axis">% of GMV (€12M)</td><td>15%</td><td>22%</td><td>29%</td><td>36%</td></tr>
+  </table>
+
+  <div class="callout" style="border-left-color:var(--crit);margin-top:20px">
+    <h3>Bottom line — does it exceed our GMV?</h3>
+    <ul>
+      <li><b>No — exposure stays below GMV.</b> Even the worst legal scenario (~€3.5M in 2027, all penalties + budget recovery stacking) is ~<b>29% of GMV</b> (€12M), because penalties are based on service value, not on grocery sales.</li>
+      <li><b>But it can exceed Bolt's revenue from ATB.</b> Worst case ≈ <b>~145% of the fees Bolt earns</b> from this client — i.e. in that scenario the deal becomes loss-making and we'd pay out more than we earned.</li>
+      <li><b>Cumulative worst case 2026 + 2027 ≈ €4.6M</b> (at 20% take rate).</li>
+      <li><b>Key mitigant:</b> the largest component (budget recovery + transfer of tax liability) is <b>likely legally unenforceable</b> per the Supreme Court ruling of 6 Feb 2026 (No. 904/2953/24). Realistically enforceable exposure is closer to Scenario ① (contractual fixed penalties), in the <b>€30k–150k/yr</b> range.</li>
+    </ul>
+  </div>
+  <p class="section-desc" style="margin-top:10px;font-size:12.5px">These are indicative estimates to size the risk for discussion, not legal or tax advice. They depend on the take-rate assumption (confirm to fix the figures), invoice volumes, and the share of invoices actually challenged.</p>
+
   <!-- METHODOLOGY -->
   <h2 class="section"><span class="bar"></span>How risk is rated</h2>
   <p class="section-desc">Each clause is scored on <b>Likelihood</b> (how probable the trigger event is) × <b>Impact</b> (financial / operational severity if it occurs). The overall rating is the combination of the two.</p>
