@@ -6,11 +6,11 @@
 <title>ATB Additional Agreement — Risk Assessment for Management</title>
 <style>
   :root{
-    --bg:#0b1220; --panel:#111a2e; --panel2:#15203a; --line:#243352;
-    --text:#e8edf7; --muted:#9fb0cc; --soft:#c5d1e6;
-    --accent:#3b82f6; --accent2:#22d3ee;
-    --crit:#ef4444; --high:#f97316; --med:#eab308; --low:#22c55e;
-    --uhy:#22d3ee; --baker:#a78bfa;
+    --bg:#eef1f7; --panel:#ffffff; --panel2:#f6f8fc; --line:#dfe5ee;
+    --text:#13203a; --muted:#5d6b85; --soft:#33425d;
+    --accent:#2563eb; --accent2:#0e7faa;
+    --crit:#dc2626; --high:#ea580c; --med:#b7791f; --low:#15a34a;
+    --uhy:#0e7faa; --baker:#7c3aed;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -137,6 +137,43 @@
     .clause-cols,.comments{grid-template-columns:1fr}
     .hero h1{font-size:22px}
   }
+
+  /* Light theme overrides */
+  body{background:radial-gradient(1200px 600px at 80% -10%,#ffffff 0%,var(--bg) 55%)}
+  a{color:var(--accent)}
+  nav.topnav{background:rgba(255,255,255,.92)}
+  nav.topnav a{color:var(--muted)}
+  nav.topnav a:hover{background:#eef2f8;color:var(--text)}
+  nav.topnav a.doclink{font-weight:700;color:var(--accent);border-color:var(--line)}
+  header.hero{background:linear-gradient(135deg,#ffffff 0%,#eef3fb 100%)}
+  .meta .pill{background:#f1f5fb;color:var(--muted)}
+  .kpi,.callout,.card{box-shadow:0 1px 3px rgba(20,40,80,.05)}
+  .matrix th{background:#eef2f8;color:var(--muted)}
+  .matrix td.axis{background:#f3f6fb;color:var(--muted)}
+  .cell-crit{background:rgba(220,38,38,.14)} .cell-high{background:rgba(234,88,12,.14)}
+  .cell-med{background:rgba(183,121,31,.16)} .cell-low{background:rgba(21,163,74,.14)}
+  .card .top{background:linear-gradient(90deg,#f6f8fc,#ffffff)}
+  .clause-no{background:#eef2f8}
+  .badge{color:#fff}
+  .b-med{background:var(--med);color:#fff} .b-low{background:var(--low);color:#fff}
+  .money-badge{background:rgba(234,88,12,.12);border-color:rgba(234,88,12,.45)}
+  .comment-btn{background:#f1f5fb;color:var(--accent)}
+  .comment-btn:hover{background:#e4ebf5;color:var(--text)}
+  .fab-comment{box-shadow:0 6px 22px rgba(20,40,80,.22)}
+  .cmt-drawer{background:#ffffff;box-shadow:-8px 0 30px rgba(20,40,80,.16)}
+  .cmt-close{background:#f1f5fb;color:var(--muted)}
+  .cmt-field{background:#f6f8fc}
+  .cmt-item{background:#f6f8fc}
+  .cmt-item .del{color:#dc2626}
+  .cmt-foot button{background:#f1f5fb;color:var(--muted)}
+  .cmt-foot button:hover{color:var(--text)}
+  .rate{background:#f6f8fc}
+  .rate.money{background:rgba(234,88,12,.08);border-color:rgba(234,88,12,.45)}
+  .clause-box{background:#f6f8fc}
+  .risk-line b{color:var(--text)}
+  .impact{background:rgba(234,88,12,.08);border-color:rgba(234,88,12,.30)}
+  .c-uhy{background:rgba(14,127,170,.08);border-color:rgba(14,127,170,.35)}
+  .c-baker{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.35)}
 </style>
 </head>
 <body>
@@ -149,6 +186,7 @@
     <a href="#summary">Summary</a>
     <a href="#method">Risk rating</a>
     <a href="#risks">Risks</a>
+    <a class="doclink" href="https://docs.google.com/document/d/1U_hhHopTg-lEx5n_KlOedJ86znoVEdcO/edit" target="_blank" rel="noopener">Contract ↗</a>
     <span class="langtabs"><a href="index.html">УКР</a><a class="active" href="index-en.html">ENG</a></span>
   </div>
 </nav>
