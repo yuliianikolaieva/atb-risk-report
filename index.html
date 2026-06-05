@@ -910,15 +910,20 @@
 <script>
 (function(){
   var STORAGE='atb_comments_v1', AUTHORK='atb_comment_author';
+  var REMOTE='https://kvdb.io/EFuY9hTvHHH8FJZLdZvmdo/atb_comments';
   var TO='anna.kalabska@bolt.eu', CC='Vyacheslav.Levchenko@bolt.eu';
   var L={general:'Загальний коментар', you:'Анонім', confirmDel:'Видалити цей коментар?', titlePrefix:'Коментарі: '};
   var cards=[].slice.call(document.querySelectorAll('.card'));
-  function load(){ try{return JSON.parse(localStorage.getItem(STORAGE))||{};}catch(e){return {};} }
-  function save(o){ try{localStorage.setItem(STORAGE, JSON.stringify(o));}catch(e){} }
-  function labelFor(i){
-    var c=cards[i], no=c.querySelector('.clause-no'), t=c.querySelector('.title');
-    return (no?no.textContent.trim():('#'+(i+1)))+' — '+(t?t.textContent.trim():'');
+  var data={};
+  function loadLS(){ try{return JSON.parse(localStorage.getItem(STORAGE))||{};}catch(e){return {};} }
+  function saveLS(o){ try{localStorage.setItem(STORAGE, JSON.stringify(o));}catch(e){} }
+  function remoteGet(){
+    return fetch(REMOTE,{cache:'no-store'}).then(function(r){return r.ok?r.text():null;})
+      .then(function(t){ if(!t) return null; try{return JSON.parse(t);}catch(e){return null;} })
+      .catch(function(){return null;});
   }
+  function remotePut(o){ return fetch(REMOTE,{method:'PUT',body:JSON.stringify(o)}).then(function(r){return r.ok;}).catch(function(){return false;}); }
+  function labelFor(i){ var c=cards[i], no=c.querySelector('.clause-no'), t=c.querySelector('.title'); return (no?no.textContent.trim():('#'+(i+1)))+' — '+(t?t.textContent.trim():''); }
   function fmt(ts){ try{return new Date(ts).toLocaleString();}catch(e){return '';} }
   var drawer=document.getElementById('cmtDrawer'),
       sel=document.getElementById('cmtSelect'),
@@ -932,14 +937,14 @@
   nameI.value=localStorage.getItem(AUTHORK)||'';
   var current='general';
   function render(){
-    var data=load(), arr=data[current]||[];
+    var arr=data[current]||[];
     list.innerHTML=''; empty.style.display=arr.length?'none':'block';
-    arr.forEach(function(c,idx){
+    arr.forEach(function(c){
       var it=document.createElement('div'); it.className='cmt-item';
       var meta=document.createElement('div'); meta.className='meta';
       var who=document.createElement('span'); who.textContent=(c.name||L.you)+' · '+fmt(c.ts);
       var del=document.createElement('button'); del.className='del'; del.textContent='видалити';
-      del.onclick=function(){ if(confirm(L.confirmDel)){ var d=load(); d[current].splice(idx,1); save(d); render(); counts(); } };
+      del.onclick=function(){ if(confirm(L.confirmDel)){ removeComment(current, c); } };
       meta.appendChild(who); meta.appendChild(del);
       var tx=document.createElement('div'); tx.className='txt'; tx.textContent=c.text;
       it.appendChild(meta); it.appendChild(tx); list.appendChild(it);
@@ -947,21 +952,39 @@
     title.textContent = current==='general'? L.general : (L.titlePrefix+labelFor(+current).split(' — ')[0]);
   }
   function counts(){
-    var data=load();
     cards.forEach(function(c,i){
       var b=c.querySelector('.comment-btn .cmt-count'); if(!b) return;
       var n=(data[String(i)]||[]).length; b.textContent=n; b.style.display=n?'inline-block':'none';
     });
   }
-  function open(key){ current=String(key); sel.value=current; render(); drawer.classList.add('open'); }
+  function apply(o){ if(o){ data=o; saveLS(data); render(); counts(); } }
+  function refresh(){ remoteGet().then(function(r){ if(r) apply(r); }); }
+  function addComment(key,c){
+    remoteGet().then(function(r){
+      var base = r || data || loadLS();
+      (base[key]=base[key]||[]).push(c);
+      data=base; saveLS(data); render(); counts();
+      remotePut(base);
+    });
+  }
+  function removeComment(key,c){
+    remoteGet().then(function(r){
+      var base = r || data || loadLS();
+      var arr=base[key]||[];
+      for(var i=0;i<arr.length;i++){ if(arr[i].ts===c.ts && arr[i].text===c.text && arr[i].name===c.name){ arr.splice(i,1); break; } }
+      data=base; saveLS(data); render(); counts();
+      remotePut(base);
+    });
+  }
+  function open(key){ current=String(key); sel.value=current; render(); drawer.classList.add('open'); refresh(); }
   document.getElementById('cmtClose').onclick=function(){ drawer.classList.remove('open'); };
   document.getElementById('fabComment').onclick=function(e){ e.preventDefault(); open('general'); };
   sel.onchange=function(){ current=sel.value; render(); };
   document.getElementById('cmtAdd').onclick=function(){
     var t=textI.value.trim(); if(!t) return;
     var nm=nameI.value.trim(); localStorage.setItem(AUTHORK, nm);
-    var d=load(); (d[current]=d[current]||[]).push({name:nm, text:t, ts:Date.now()}); save(d);
-    textI.value=''; render(); counts();
+    textI.value='';
+    addComment(current, {name:nm, text:t, ts:Date.now()});
   };
   cards.forEach(function(c,i){
     var top=c.querySelector('.top'); if(!top) return;
@@ -971,9 +994,9 @@
     top.appendChild(b);
   });
   function allText(){
-    var d=load(), out=[];
+    var out=[];
     ['general'].concat(cards.map(function(_,i){return String(i);})).forEach(function(k){
-      var arr=d[k]; if(!arr||!arr.length) return;
+      var arr=data[k]; if(!arr||!arr.length) return;
       out.push('=== '+(k==='general'?L.general:labelFor(+k))+' ===');
       arr.forEach(function(c){ out.push('['+fmt(c.ts)+'] '+(c.name||L.you)+': '+c.text); });
       out.push('');
@@ -989,7 +1012,8 @@
     var txt=allText()||'(немає коментарів)';
     window.location.href='mailto:'+TO+'?cc='+CC+'&subject='+encodeURIComponent('ATB Risk Report — коментарі')+'&body='+encodeURIComponent(txt);
   };
-  counts();
+  data=loadLS(); counts(); refresh();
+  setInterval(function(){ if(drawer.classList.contains('open')) refresh(); }, 12000);
 })();
 </script>
 </body>
