@@ -232,9 +232,9 @@
   <div class="callout" style="border-left-color:var(--accent2)">
     <h3>First, in plain terms: what "take rate" means</h3>
     <ul>
-      <li><b>Take rate</b> is the share of GMV Bolt receives as revenue. <b>Bolt's rate with ATB = 13.33% of GMV</b> (3.33% commission + 10% service fee).</li>
-      <li>It matters because <b>almost every penalty and tax compensation is calculated on the "service value" (SV)</b> — i.e. Bolt's revenue (~13.33% of GMV), <b>not</b> on the whole €12M GMV (grocery sales, not Bolt's income).</li>
-      <li>So Bolt's revenue from ATB is ~€1.6M in 2027, and all amounts below are computed at the 13.33% rate (3.33% commission + 10% service fee).</li>
+      <li><b>Bolt's revenue from ATB = 13.33% of GMV</b> (3.33% commission + 10% Service Fee) → ~€1.6M in 2027.</li>
+      <li><b>The Service Fee (SF) is Bolt's per-order revenue that ATB does not see and that is not a commission.</b> So SF is revenue / P&amp;L upside, but it is <b>not part of the "service value" (SV) on which penalties are calculated</b>.</li>
+      <li><b>The penalty base (SV) = the 3.33% commission only</b> (what Bolt invoices ATB in acts / tax invoices) → ~€400k in 2027. All penalty figures below are based on SV = 3.33%.</li>
     </ul>
   </div>
 
@@ -244,42 +244,44 @@
     <span class="pill">VAT: 20%</span>
     <span class="pill">Corporate income tax: 18%</span>
     <span class="pill">Tax understatement penalty: 25% (50% if repeated)</span>
-    <span class="pill">Bolt rate: 13.33% (3.33% commission + 10% service fee)</span>
+    <span class="pill">Bolt revenue: 13.33% (3.33% commission + 10% SF)</span>
+    <span class="pill">Penalty base SV: 3.33% (commission only)</span>
     <span class="pill">GMV 2026 ~€4M · 2027 ~€12M</span>
   </div>
 
-  <h3 style="font-size:15px;margin:24px 0 6px">1 · Service value (Bolt revenue) = penalty base</h3>
+  <h3 style="font-size:15px;margin:24px 0 6px">1 · Bolt revenue and the penalty base</h3>
   <table class="matrix">
-    <tr><th>Year</th><th>GMV</th><th>Bolt rate (3.33% commission + 10% service fee)</th><th>Service value (Bolt revenue)</th></tr>
-    <tr><td class="axis">2026 (Sep–Dec)</td><td>€4M</td><td>13.33%</td><td class="cell-med">~€0.53M (~€533k)</td></tr>
-    <tr><td class="axis">2027</td><td>€12M</td><td>13.33%</td><td class="cell-med">~€1.60M</td></tr>
+    <tr><th>Year</th><th>GMV</th><th>Bolt revenue (13.33%: commission + SF)</th><th>Penalty base SV (commission 3.33%)</th></tr>
+    <tr><td class="axis">2026 (Sep–Dec)</td><td>€4M</td><td>~€0.53M (~€533k)</td><td class="cell-med">~€0.13M (~€133k)</td></tr>
+    <tr><td class="axis">2027</td><td>€12M</td><td>~€1.60M</td><td class="cell-med">~€0.40M (~€400k)</td></tr>
   </table>
+  <p class="section-desc" style="margin-top:6px;font-size:12.5px">Penalties are based on SV (3.33% commission); SF (10%) is extra Bolt revenue, not a penalty base.</p>
 
   <h3 style="font-size:15px;margin:24px 0 6px">2 · Loss mechanisms (per Ukrainian law, on service value "SV")</h3>
   <table class="matrix" style="font-size:12.5px">
-    <tr><th style="text-align:left">Mechanism / clause</th><th>Legal basis</th><th>Formula</th><th>% of SV</th><th>€ in 2027 (SV €1.6M)</th></tr>
-    <tr><td style="text-align:left">Lost VAT input credit (Cl. 2.1, 5)</td><td>VAT 20%</td><td>20% × SV</td><td>20%</td><td>~€320k</td></tr>
-    <tr><td style="text-align:left">Tax penalty on understated VAT</td><td>Tax Code, 25–50%</td><td>25% × (20% SV)</td><td>~5%</td><td>~€80k</td></tr>
-    <tr><td style="text-align:left">Late-payment interest</td><td>Tax Code</td><td>~ on VAT amount</td><td>~1%</td><td>~€16k</td></tr>
-    <tr><td style="text-align:left">Corporate income tax base increase (Cl. 2.1)</td><td>CIT 18%</td><td>18% × SV</td><td>18%</td><td>~€288k</td></tr>
-    <tr><td style="text-align:left">Recovery to state budget — void / fictitious deal (Cl. 2.1)</td><td>up to 100%</td><td>100% × SV</td><td>100%</td><td>~€1.6M</td></tr>
-    <tr><td style="text-align:left"><b>Worst case if all stack (full year)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€2.3M</b></td></tr>
+    <tr><th style="text-align:left">Mechanism / clause</th><th>Legal basis</th><th>Formula</th><th>% of SV</th><th>€ in 2027 (SV €400k)</th></tr>
+    <tr><td style="text-align:left">Lost VAT input credit (Cl. 2.1, 5)</td><td>VAT 20%</td><td>20% × SV</td><td>20%</td><td>~€80k</td></tr>
+    <tr><td style="text-align:left">Tax penalty on understated VAT</td><td>Tax Code, 25–50%</td><td>25% × (20% SV)</td><td>~5%</td><td>~€20k</td></tr>
+    <tr><td style="text-align:left">Late-payment interest</td><td>Tax Code</td><td>~ on VAT amount</td><td>~1%</td><td>~€4k</td></tr>
+    <tr><td style="text-align:left">Corporate income tax base increase (Cl. 2.1)</td><td>CIT 18%</td><td>18% × SV</td><td>18%</td><td>~€72k</td></tr>
+    <tr><td style="text-align:left">Recovery to state budget — void / fictitious deal (Cl. 2.1)</td><td>up to 100%</td><td>100% × SV</td><td>100%</td><td>~€400k</td></tr>
+    <tr><td style="text-align:left"><b>Worst case if all stack (full year)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€576k</b></td></tr>
   </table>
 
-  <h3 style="font-size:15px;margin:24px 0 6px">3 · Scenarios (2027, rate 13.33% → SV ~€1.6M)</h3>
+  <h3 style="font-size:15px;margin:24px 0 6px">3 · Scenarios (2027, SV ~€400k; revenue ~€1.6M)</h3>
   <table class="matrix" style="font-size:12.5px">
     <tr><th style="text-align:left">Scenario</th><th>Estimated loss</th><th>% of Bolt revenue</th><th>% of GMV</th></tr>
     <tr><td style="text-align:left">① Administrative / contractual penalties only<br><span style="color:var(--muted)">fixed, depend on number of documents</span></td><td class="cell-low">€10k–50k / yr</td><td>1–3%</td><td>&lt;0.5%</td></tr>
-    <tr><td style="text-align:left">② Partial tax reassessment<br><span style="color:var(--muted)">ATB loses VAT credit on part of invoices + penalties + CIT</span></td><td class="cell-med">€160k–690k / yr</td><td>10–43%</td><td>1.3–5.7%</td></tr>
-    <tr><td style="text-align:left">③ Worst case — deal declared void / fictitious<br><span style="color:var(--muted)">budget recovery + VAT + CIT + penalties</span></td><td class="cell-crit"><b>~€2.3M / yr</b></td><td><b>~144%</b></td><td>~19%</td></tr>
+    <tr><td style="text-align:left">② Partial tax reassessment<br><span style="color:var(--muted)">ATB loses VAT credit on part of invoices + penalties + CIT</span></td><td class="cell-med">€40k–170k / yr</td><td>3–11%</td><td>0.3–1.4%</td></tr>
+    <tr><td style="text-align:left">③ Worst case — deal declared void / fictitious<br><span style="color:var(--muted)">budget recovery + VAT + CIT + penalties</span></td><td class="cell-crit"><b>~€576k / yr</b></td><td><b>~36%</b></td><td>~4.8%</td></tr>
   </table>
 
-  <h3 style="font-size:15px;margin:24px 0 6px">4 · Worst case by year (rate 13.33%)</h3>
+  <h3 style="font-size:15px;margin:24px 0 6px">4 · Worst case by year (penalty base SV = 3.33% commission)</h3>
   <table class="matrix">
-    <tr><th>&nbsp;</th><th>2026 (SV ~€533k)</th><th>2027 (SV ~€1.6M)</th><th>Cumulative</th></tr>
-    <tr><td class="axis">Worst-case loss (≈1.44 × SV)</td><td>~€768k</td><td class="cell-crit">~€2.3M</td><td><b>~€3.1M</b></td></tr>
-    <tr><td class="axis">% of GMV</td><td>19%</td><td>19%</td><td>19%</td></tr>
-    <tr><td class="axis">% of Bolt revenue</td><td>144%</td><td>144%</td><td>144%</td></tr>
+    <tr><th>&nbsp;</th><th>2026 (SV ~€133k)</th><th>2027 (SV ~€400k)</th><th>Cumulative</th></tr>
+    <tr><td class="axis">Worst-case loss (≈1.44 × SV)</td><td>~€192k</td><td class="cell-crit">~€576k</td><td><b>~€768k</b></td></tr>
+    <tr><td class="axis">% of GMV</td><td>4.8%</td><td>4.8%</td><td>4.8%</td></tr>
+    <tr><td class="axis">% of Bolt revenue (13.33%)</td><td>36%</td><td>36%</td><td>36%</td></tr>
   </table>
 
   <h3 style="font-size:15px;margin:24px 0 6px">5 · Fixed penalties (FX 51 UAH/€)</h3>
@@ -296,13 +298,13 @@
   <div class="callout" style="border-left-color:var(--crit);margin-top:20px">
     <h3>Bottom line — does it exceed our GMV?</h3>
     <ul>
-      <li><b>No — it stays below GMV.</b> Even the worst legal scenario (~€2.3M in 2027, all penalties + budget recovery stacking) is ~<b>19% of GMV</b> (€12M), because penalties are based on Bolt's revenue (13.33% rate), not on total grocery sales.</li>
-      <li><b>But it exceeds Bolt's revenue from ATB.</b> Worst case ≈ <b>~144% of the revenue Bolt earns</b> from this client (~€1.6M in 2027) — i.e. in that scenario the deal becomes loss-making and we'd pay out more than we earned.</li>
-      <li><b>Cumulative worst case 2026 + 2027 ≈ €3.1M.</b></li>
+      <li><b>No — nowhere near.</b> The worst legal scenario ~<b>€576k</b> in 2027 = only ~<b>4.8% of GMV</b> (€12M), because penalties are based on SV (3.33% commission), not on grocery sales or the SF.</li>
+      <li><b>The deal stays profitable even in the worst case.</b> €576k ≈ ~<b>36% of Bolt's revenue</b> (~€1.6M incl. SF) → ~€1.0M profit remains. The SF is not part of the penalty base, so it cushions the risk.</li>
+      <li><b>Cumulative worst case 2026 + 2027 ≈ €768k.</b></li>
       <li><b>Key mitigant:</b> the largest component (budget recovery + transfer of tax liability) is <b>likely legally unenforceable</b> per the Supreme Court ruling of 6 Feb 2026 (No. 904/2953/24). Realistically enforceable exposure is closer to Scenario ① (contractual fixed penalties), in the <b>€10k–50k/yr</b> range.</li>
     </ul>
   </div>
-  <p class="section-desc" style="margin-top:10px;font-size:12.5px">These are indicative estimates to size the risk for discussion, not legal or tax advice. Computed at the 13.33% rate (3.33% commission + 10% service fee); amounts depend on invoice volumes and the share of invoices actually challenged.</p>
+  <p class="section-desc" style="margin-top:10px;font-size:12.5px">These are indicative estimates to size the risk for discussion, not legal or tax advice. Bolt revenue 13.33% (commission + SF); penalty base SV = 3.33% commission; amounts depend on invoice volumes and the share of invoices actually challenged.</p>
   </section>
 
   <!-- EXECUTIVE SUMMARY -->
@@ -346,7 +348,7 @@
   <!-- RISKS (ordered Critical -> Low) -->
   <section id="risks">
   <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Risks — from critical to low</h2>
-  <p class="section-desc">All 20 clauses flagged by the auditors (UHY + Baker McKenzie / Roman Koren), sorted by impact level. Each header shows the indicative € loss (for 2027, revenue ~€1.6M).</p>
+  <p class="section-desc">All 20 clauses flagged by the auditors (UHY + Baker McKenzie / Roman Koren), sorted by impact level. Each header shows the indicative € loss (for 2027, SV base ~€400k).</p>
 
   <!-- C1: Clause 2 -->
   <div class="card">
@@ -354,21 +356,21 @@
       <span class="clause-no">Clause 2</span>
       <span class="title">Contractor assumes all negative consequences &amp; potential risks</span>
       <span class="badge b-crit">Critical</span>
-      <span class="money-badge">Loss: up to ~€2.3M/yr (uncapped)</span>
+      <span class="money-badge">Loss: up to ~€576k/yr (uncapped)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium–High</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v crit">Critical</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v crit">Critical</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€2.3M/yr</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€576k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>«Виконавець бере на себе відповідальність за всі негативні наслідки та потенційні ризики, що будь-яким чином пов’язані, або можуть бути пов’язані із фінансово-господарськими відносинами між Замовником та Виконавцем за даним Договором.»</p></div>
         <div class="clause-box"><div class="lang">English</div><p>"The Contractor assumes responsibility for all negative consequences and potential risks that are in any way related, or may be related, to the financial and business relations between the Customer and the Contractor under this Agreement."</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Unlimited, one-sided allocation of tax and business liability to Bolt — an open-ended "catch-all" obligation.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Unlimited financial exposure for Bolt, with no liability cap (worst case ~€2.3M/yr, but formally uncapped).</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Unlimited financial exposure for Bolt, with no liability cap (worst case ~€576k/yr, but formally uncapped).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Unlimited allocation of tax liability to Bolt (one-sided risk allocation) → unlimited financial exposure for Bolt.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk &amp; assessment:</b> Bolt becomes a quasi-guarantor of the counterparty's VAT/CIT exposure for any tax irregularities. This contradicts the Supreme Court ruling of 6&nbsp;Feb&nbsp;2026 (case No.&nbsp;904/2953/24): contractual transfer of public-law / tax liability is <b>invalid and produces no legal consequences</b>. <b>Likelihood:</b> Medium–High (e.g. an unregistered VAT invoice affecting ATB's input VAT would likely become litigious).</p></div>
@@ -382,24 +384,24 @@
       <span class="clause-no">Clause 2.1</span>
       <span class="title">Compensation of taxes, penalties, lost VAT credit &amp; budget recovery</span>
       <span class="badge b-crit">Critical</span>
-      <span class="money-badge">Loss: up to ~€2.21M/yr</span>
+      <span class="money-badge">Loss: up to ~€552k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v crit">Critical</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v crit">Critical</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€2.21M/yr</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€552k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Нарахування контролюючими органами податків, зборів, штрафних санкцій; зменшення податкового кредиту Замовника з ПДВ за податковими накладними Виконавця; та/або збільшення об’єкта оподаткування з податку на прибуток; або стягнення в дохід держави отриманого за угодою, визнаною недійсною.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Imposition by tax authorities of taxes, fees and penalties; reduction of the Customer's VAT input tax credit based on the Contractor's tax invoices; and/or increase of the Customer's taxable profit base; or a court decision ordering recovery to the state budget of amounts received under an agreement declared invalid.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Compensation of all tax penalties even in the absence of proven fault by Bolt.</p>
-      <div class="impact"><span class="lab">Potential impact (2027, SV €1.6M)</span><ul>
-        <li>Lost VAT input credit — <b>20% of service value ≈ €320k</b> + penalties / interest (~€96k).</li>
-        <li>Increase of CIT base — <b>18% of service value ≈ €288k</b>.</li>
-        <li>Recovery to the state budget — potentially <b>100% of revenue ≈ €1.6M</b>.</li>
+      <div class="impact"><span class="lab">Potential impact (2027, SV €400k)</span><ul>
+        <li>Lost VAT input credit — <b>20% of service value ≈ €80k</b> + penalties / interest (~€24k).</li>
+        <li>Increase of CIT base — <b>18% of service value ≈ €72k</b>.</li>
+        <li>Recovery to the state budget — potentially <b>100% of the contract value ≈ €400k</b>.</li>
       </ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>The Customer acknowledges that tax-authority decisions may be deemed unlawful and cancelled; in that case reimbursement to the Contractor may apply, but only after the funds are returned by the tax authorities to the Customer.</p></div>
@@ -414,21 +416,21 @@
       <span class="clause-no">Clause 2, 4)</span>
       <span class="title">Liability triggered by criminal proceedings (no verdict required)</span>
       <span class="badge b-high">High</span>
-      <span class="money-badge">Loss: payment suspension (up to ~€1.6M revenue)</span>
+      <span class="money-badge">Loss: payment suspension (up to ~€400k commission)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">suspension up to ~€1.6M</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">suspension up to ~€400k</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Відкриття кримінального провадження, де у будь-якому процесуальному статусі (або без такого) фігурує Виконавець або будь-яка з його посадових осіб (директор, бухгалтер) — за переліком статей Кримінального кодексу.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Negative consequences include the initiation of criminal proceedings in which the Contractor or any of its officers (director / general director, accountant / chief accountant) appears in any procedural status (or without any status).</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Consequences (payment suspension, liability) arise even in the absence of a court verdict.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>No direct fixed penalty; the main harm is suspension of payments (deferral of up to ~€1.6M revenue/yr) + reputational and operational risk.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>No direct fixed penalty; the main harm is suspension of payments (deferral of up to ~€400k commission/yr) + reputational and operational risk.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Consequences even in the absence of a court verdict — reputational and operational risk.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> Adverse contractual consequences may arise merely upon <b>initiation</b> of criminal proceedings involving Bolt or its officers, irrespective of outcome — exposure to payment suspension without anyone being criminally liable. <b>Likelihood:</b> Medium–High — proceedings in Ukraine may remain open for long periods once initiated.</p></div>
@@ -442,21 +444,21 @@
       <span class="clause-no">Clause 5</span>
       <span class="title">VAT compensation for blocked / suspended tax invoices</span>
       <span class="badge b-high">High</span>
-      <span class="money-badge">Loss: ≥€20/doc; up to ~€320k/yr</span>
+      <span class="money-badge">Loss: ≥€20/doc; up to ~€80k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€320k/yr</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">up to ~€80k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>У разі зупинки/відмови Замовнику в реєстрації розрахунку коригування (обов’язок реєстрації якого покладено на Замовника) внаслідок зупинки реєстрації податкової накладної — Виконавець сплачує штраф у розмірі ПДВ, але не менше 1 000 грн за кожне порушення.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Compensation of VAT amounts related to blocked tax invoices, despite the Contractor having no actual control over the suspension of tax-invoice registration.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Bolt is penalised for the state's suspension of registration — an event entirely outside its control.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>A penalty equal to the VAT amount, but <b>not less than UAH 1,000 (~€20)</b> per breach; cumulatively up to ~€320k/yr (full VAT on revenue).</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>A penalty equal to the VAT amount, but <b>not less than UAH 1,000 (~€20)</b> per breach; cumulatively up to ~€80k/yr (full VAT on SV).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Compensation of VAT for blocked tax invoices, despite the Contractor having no actual control over the suspension of registration.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Assessment:</b> Penalty of 1% of the VAT obligation (plus fixed amounts). <b>Punitive in nature</b> and inconsistent with the Supreme Court position cited for Clause&nbsp;2 (transfer of tax liability is invalid). <b>Likelihood:</b> Medium–High.</p></div>
@@ -470,21 +472,21 @@
       <span class="clause-no">Clause 5 (365 days)</span>
       <span class="title">Compensation for errors found after 365 days</span>
       <span class="badge b-high">High</span>
-      <span class="money-badge">Loss: up to ~€320–400k/yr</span>
+      <span class="money-badge">Loss: up to ~€80–100k/yr</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v low">Low–Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v high">High</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€320–400k/yr</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€80–100k/yr</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо на момент виявлення помилки минуло більше 365 днів з дати складення податкової накладної/розрахунку коригування, і це призвело до втрати Замовником податкового кредиту та донарахувань — Виконавець компенсує повну суму втраченого ПК та всі податки, збори, штрафи і пеню.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Where more than 365 days have passed since issuance of the tax invoice / adjustment when an error is identified, and this causes the Customer to lose VAT credit and incur additional assessments, the Contractor must fully compensate the lost VAT credit and all taxes, fees, penalties and interest.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> Penalties for technical errors not identified in time by either party.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>20% of service value ≈ €320k</b> (full VAT amount) + penalties / interest (~€80k).</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li><b>20% of service value ≈ €80k</b> (full VAT amount) + penalties / interest (~€20k).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Penalties for potential technical errors which were not identified in time by either the Contractor or the Customer.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Assessment:</b> Same concern as the other penalty clauses — <b>punitive penalties</b> inconsistent with the Supreme Court position cited for Clause&nbsp;2. <b>Likelihood:</b> Medium–High.</p></div>
@@ -498,21 +500,21 @@
       <span class="clause-no">Clause 2.2 / 2.3</span>
       <span class="title">Suspension of payments by the Customer</span>
       <span class="badge b-med">Medium–High</span>
-      <span class="money-badge">Loss: deferral up to ~€1.6M revenue</span>
+      <span class="money-badge">Loss: deferral up to ~€400k commission</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v high">High</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v med">Medium–High</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">deferral up to ~€1.6M</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">deferral up to ~€400k</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> The Customer effectively freezes payments at its discretion, with no late-payment liability.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk — payments (up to ~€1.6M revenue/yr) withheld for an indefinite period.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk — payments (up to ~€400k commission/yr) withheld for an indefinite period.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Suspension of payments — the Customer effectively freezes payments → cash-flow risk.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p><b>Risk:</b> ATB may suspend payments on broadly and subjectively defined grounds, for an <b>indefinite period controlled by third parties</b> (tax office, courts), despite proper performance by Bolt. <b>Likelihood:</b> High — the suspension threshold is broad and subjective.</p></div>
@@ -526,21 +528,21 @@
       <span class="clause-no">Clause 6</span>
       <span class="title">20% of payment deferred until tax-invoice registration</span>
       <span class="badge b-med">Medium</span>
-      <span class="money-badge">Loss: deferral ~€320k/yr (20%)</span>
+      <span class="money-badge">Loss: deferral ~€80k/yr (20%)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Likelihood</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Impact</span><span class="v med">Medium</span></div>
         <div class="rate"><span class="k">Overall</span><span class="v med">Medium</span></div>
-        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€320k/yr (deferral)</span></div>
+        <div class="rate money"><span class="k">Loss (2027)</span><span class="v">~€80k/yr (deferral)</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>80% вартості сплачується протягом ___ днів від дати виконання; решта 20% — протягом 3 днів від дати виконання Виконавцем зобов’язання з реєстрації податкових накладних/розрахунків коригування.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>80% of the service value is paid within ___ calendar days of completion; the remaining 20% within 3 days from the date the Contractor registers the tax invoices / adjustment calculations.</p></div>
       </div>
       <p class="risk-line"><b>Risk:</b> The 20% is delayed if registration in the Unified Register is suspended or refused — even though Bolt has no direct control over that.</p>
-      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk on 20% of every invoice ≈ <b>~€320k/yr</b> (20% of revenue), temporarily deferred.</li></ul></div>
+      <div class="impact"><span class="lab">Potential impact</span><ul><li>Cash-flow risk on 20% of every invoice ≈ <b>~€80k/yr</b> (20% of commission), temporarily deferred.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>UHY comment</div><p>Bolt has no direct control over the occurrence of suspension or refusal of tax-invoice registration in the Unified Register.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Baker McKenzie comment</div><p>This is rather a <b>commercial / business risk</b> of postponed payment terms (not a legal risk).</p></div>
