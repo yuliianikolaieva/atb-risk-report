@@ -196,9 +196,9 @@
   <div class="callout" style="border-left-color:var(--accent2)">
     <h3>Спочатку простими словами: що таке «take rate»</h3>
     <ul>
-      <li><b>Take rate</b> — це комісія, яку Bolt заробляє з продажів АТБ, у відсотках від GMV. <b>Реальна комісія Bolt з АТБ = 3,33% (без ПДВ).</b></li>
-      <li>Це важливо тому, що <b>майже всі штрафи й податкові компенсації в договорі рахуються від «вартості послуг»</b> — тобто від комісії/виручки Bolt (~3,33% від GMV), а <b>не від усього GMV</b> (€12 млн — це продаж продуктів, а не дохід Bolt).</li>
-      <li>Отже виручка Bolt з АТБ невелика (~€0,4 млн у 2027 році), і всі суми нижче розраховані саме під комісію 3,33%.</li>
+      <li><b>Take rate</b> — це частка від GMV, яку Bolt отримує як виручку. <b>Ставка Bolt з АТБ = 13,33% від GMV</b> (3,33% комісія + 10% service fee).</li>
+      <li>Це важливо тому, що <b>майже всі штрафи й податкові компенсації в договорі рахуються від «вартості послуг» (ВП)</b> — тобто від виручки Bolt (~13,33% від GMV), а <b>не від усього GMV</b> (€12 млн — це продаж продуктів, а не дохід Bolt).</li>
+      <li>Отже виручка Bolt з АТБ ~€1,6 млн у 2027 році, і всі суми нижче розраховані під ставку 13,33% (3,33% комісія + 10% service fee).</li>
     </ul>
   </div>
 
@@ -208,41 +208,41 @@
     <span class="pill">ПДВ: 20%</span>
     <span class="pill">Податок на прибуток: 18%</span>
     <span class="pill">Штраф за заниження податку: 25% (50% за повторне)</span>
-    <span class="pill">Комісія Bolt: 3,33% (без ПДВ)</span>
+    <span class="pill">Ставка Bolt: 13,33% (3,33% комісія + 10% service fee)</span>
     <span class="pill">GMV 2026 ~€4 млн · 2027 ~€12 млн</span>
   </div>
 
   <h3 style="font-size:15px;margin:24px 0 6px">1 · Вартість послуг (виручка Bolt) = база для штрафів</h3>
   <table class="matrix">
-    <tr><th>Рік</th><th>GMV</th><th>Комісія Bolt</th><th>Вартість послуг (виручка Bolt)</th></tr>
-    <tr><td class="axis">2026 (вер.–груд.)</td><td>€4 млн</td><td>3,33% (без ПДВ)</td><td class="cell-med">~€0,13 млн (~€133 тис)</td></tr>
-    <tr><td class="axis">2027</td><td>€12 млн</td><td>3,33% (без ПДВ)</td><td class="cell-med">~€0,40 млн (~€400 тис)</td></tr>
+    <tr><th>Рік</th><th>GMV</th><th>Ставка Bolt (комісія 3,33% + service fee 10%)</th><th>Вартість послуг (виручка Bolt)</th></tr>
+    <tr><td class="axis">2026 (вер.–груд.)</td><td>€4 млн</td><td>13,33%</td><td class="cell-med">~€0,53 млн (~€533 тис)</td></tr>
+    <tr><td class="axis">2027</td><td>€12 млн</td><td>13,33%</td><td class="cell-med">~€1,60 млн</td></tr>
   </table>
 
   <h3 style="font-size:15px;margin:24px 0 6px">2 · Механізми втрат (за законодавством України, від вартості послуг «ВП»)</h3>
   <table class="matrix" style="font-size:12.5px">
-    <tr><th style="text-align:left">Механізм / пункт</th><th>Підстава</th><th>Формула</th><th>% від ВП</th><th>€ у 2027 (ВП €400 тис)</th></tr>
-    <tr><td style="text-align:left">Втрата податкового кредиту з ПДВ (п. 2.1, 5)</td><td>ПДВ 20%</td><td>20% × ВП</td><td>20%</td><td>~€80 тис</td></tr>
-    <tr><td style="text-align:left">Штраф за заниження ПДВ</td><td>ПКУ, 25–50%</td><td>25% × (20% ВП)</td><td>~5%</td><td>~€20 тис</td></tr>
-    <tr><td style="text-align:left">Пеня за прострочення</td><td>ПКУ</td><td>~ від суми ПДВ</td><td>~1%</td><td>~€4 тис</td></tr>
-    <tr><td style="text-align:left">Збільшення бази податку на прибуток (п. 2.1)</td><td>ПнП 18%</td><td>18% × ВП</td><td>18%</td><td>~€72 тис</td></tr>
-    <tr><td style="text-align:left">Стягнення в дохід держави — нікчемна/фіктивна угода (п. 2.1)</td><td>до 100%</td><td>100% × ВП</td><td>100%</td><td>~€400 тис</td></tr>
-    <tr><td style="text-align:left"><b>Найгірший випадок, якщо все накладається (за рік)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€576 тис</b></td></tr>
+    <tr><th style="text-align:left">Механізм / пункт</th><th>Підстава</th><th>Формула</th><th>% від ВП</th><th>€ у 2027 (ВП €1,6 млн)</th></tr>
+    <tr><td style="text-align:left">Втрата податкового кредиту з ПДВ (п. 2.1, 5)</td><td>ПДВ 20%</td><td>20% × ВП</td><td>20%</td><td>~€320 тис</td></tr>
+    <tr><td style="text-align:left">Штраф за заниження ПДВ</td><td>ПКУ, 25–50%</td><td>25% × (20% ВП)</td><td>~5%</td><td>~€80 тис</td></tr>
+    <tr><td style="text-align:left">Пеня за прострочення</td><td>ПКУ</td><td>~ від суми ПДВ</td><td>~1%</td><td>~€16 тис</td></tr>
+    <tr><td style="text-align:left">Збільшення бази податку на прибуток (п. 2.1)</td><td>ПнП 18%</td><td>18% × ВП</td><td>18%</td><td>~€288 тис</td></tr>
+    <tr><td style="text-align:left">Стягнення в дохід держави — нікчемна/фіктивна угода (п. 2.1)</td><td>до 100%</td><td>100% × ВП</td><td>100%</td><td>~€1,6 млн</td></tr>
+    <tr><td style="text-align:left"><b>Найгірший випадок, якщо все накладається (за рік)</b></td><td>—</td><td>—</td><td class="cell-crit"><b>~144%</b></td><td class="cell-crit"><b>~€2,3 млн</b></td></tr>
   </table>
 
-  <h3 style="font-size:15px;margin:24px 0 6px">3 · Сценарії (2027, комісія 3,33% → ВП ~€400 тис)</h3>
+  <h3 style="font-size:15px;margin:24px 0 6px">3 · Сценарії (2027, ставка 13,33% → ВП ~€1,6 млн)</h3>
   <table class="matrix" style="font-size:12.5px">
     <tr><th style="text-align:left">Сценарій</th><th>Орієнтовна втрата</th><th>% від виручки Bolt</th><th>% від GMV</th></tr>
-    <tr><td style="text-align:left">① Лише адміністративні / договірні штрафи<br><span style="color:var(--muted)">фіксовані, залежать від кількості документів</span></td><td class="cell-low">€10–50 тис / рік</td><td>3–13%</td><td>&lt;0,5%</td></tr>
-    <tr><td style="text-align:left">② Часткове донарахування податків<br><span style="color:var(--muted)">АТБ втрачає ПК на частину накладних + штрафи + ПнП</span></td><td class="cell-med">€40–170 тис / рік</td><td>10–43%</td><td>0,3–1,4%</td></tr>
-    <tr><td style="text-align:left">③ Найгірший — угоду визнано нікчемною / фіктивною<br><span style="color:var(--muted)">стягнення в бюджет + ПДВ + ПнП + штрафи</span></td><td class="cell-crit"><b>~€576 тис / рік</b></td><td><b>~144%</b></td><td>~4,8%</td></tr>
+    <tr><td style="text-align:left">① Лише адміністративні / договірні штрафи<br><span style="color:var(--muted)">фіксовані, залежать від кількості документів</span></td><td class="cell-low">€10–50 тис / рік</td><td>1–3%</td><td>&lt;0,5%</td></tr>
+    <tr><td style="text-align:left">② Часткове донарахування податків<br><span style="color:var(--muted)">АТБ втрачає ПК на частину накладних + штрафи + ПнП</span></td><td class="cell-med">€160–690 тис / рік</td><td>10–43%</td><td>1,3–5,7%</td></tr>
+    <tr><td style="text-align:left">③ Найгірший — угоду визнано нікчемною / фіктивною<br><span style="color:var(--muted)">стягнення в бюджет + ПДВ + ПнП + штрафи</span></td><td class="cell-crit"><b>~€2,3 млн / рік</b></td><td><b>~144%</b></td><td>~19%</td></tr>
   </table>
 
-  <h3 style="font-size:15px;margin:24px 0 6px">4 · Найгірший випадок по роках (комісія 3,33%)</h3>
+  <h3 style="font-size:15px;margin:24px 0 6px">4 · Найгірший випадок по роках (ставка 13,33%)</h3>
   <table class="matrix">
-    <tr><th>&nbsp;</th><th>2026 (ВП ~€133 тис)</th><th>2027 (ВП ~€400 тис)</th><th>Кумулятивно</th></tr>
-    <tr><td class="axis">Втрата (≈1,44 × ВП)</td><td>~€192 тис</td><td class="cell-crit">~€576 тис</td><td><b>~€0,77 млн</b></td></tr>
-    <tr><td class="axis">% від GMV</td><td>4,8%</td><td>4,8%</td><td>4,8%</td></tr>
+    <tr><th>&nbsp;</th><th>2026 (ВП ~€533 тис)</th><th>2027 (ВП ~€1,6 млн)</th><th>Кумулятивно</th></tr>
+    <tr><td class="axis">Втрата (≈1,44 × ВП)</td><td>~€768 тис</td><td class="cell-crit">~€2,3 млн</td><td><b>~€3,1 млн</b></td></tr>
+    <tr><td class="axis">% від GMV</td><td>19%</td><td>19%</td><td>19%</td></tr>
     <tr><td class="axis">% від виручки Bolt</td><td>144%</td><td>144%</td><td>144%</td></tr>
   </table>
 
@@ -260,13 +260,13 @@
   <div class="callout" style="border-left-color:var(--crit);margin-top:20px">
     <h3>Підсумок — чи перевищать втрати наш GMV?</h3>
     <ul>
-      <li><b>Ні — і навіть близько не наближаються до GMV.</b> Навіть найгірший юридичний сценарій (~€576 тис у 2027, коли всі штрафи + стягнення накладаються) — це лише ~<b>4,8% від GMV</b> (€12 млн), бо комісія Bolt мала (3,33%), а штрафи рахуються від неї, а не від продажів продуктів.</li>
-      <li><b>Але це може перевищити виручку Bolt з АТБ.</b> Найгірший випадок ≈ <b>~144% від комісії, яку Bolt заробляє</b> з цього клієнта (~€400 тис у 2027) — тобто у такому сценарії угода стає збитковою: виплатимо більше, ніж заробили.</li>
-      <li><b>Кумулятивно найгірший випадок 2026 + 2027 ≈ €0,77 млн.</b></li>
+      <li><b>Ні — залишається нижчою за GMV.</b> Навіть найгірший юридичний сценарій (~€2,3 млн у 2027, коли всі штрафи + стягнення накладаються) — це ~<b>19% від GMV</b> (€12 млн), бо штрафи рахуються від виручки Bolt (ставка 13,33%), а не від усіх продажів продуктів.</li>
+      <li><b>Але це перевищує виручку Bolt з АТБ.</b> Найгірший випадок ≈ <b>~144% від виручки, яку Bolt заробляє</b> з цього клієнта (~€1,6 млн у 2027) — тобто у такому сценарії угода стає збитковою: виплатимо більше, ніж заробили.</li>
+      <li><b>Кумулятивно найгірший випадок 2026 + 2027 ≈ €3,1 млн.</b></li>
       <li><b>Ключовий мітигант:</b> найбільша складова (стягнення в бюджет + перенос податкової відповідальності) <b>юридично, найімовірніше, невиконувана</b> — згідно з постановою Верховного Суду від 06.02.2026 (№ 904/2953/24). Реально стягувана експозиція ближча до Сценарію ① (договірні фіксовані штрафи), у діапазоні <b>€10–50 тис/рік</b>.</li>
     </ul>
   </div>
-  <p class="section-desc" style="margin-top:10px;font-size:12.5px">Це орієнтовні оцінки для обговорення масштабу ризику, а не юридична чи податкова консультація. Розраховано під комісію 3,33% (без ПДВ); суми залежать від кількості накладних і частки накладних, які реально оскаржать.</p>
+  <p class="section-desc" style="margin-top:10px;font-size:12.5px">Це орієнтовні оцінки для обговорення масштабу ризику, а не юридична чи податкова консультація. Розраховано під ставку 13,33% (3,33% комісія + 10% service fee); суми залежать від кількості накладних і частки накладних, які реально оскаржать.</p>
   </section>
 
   <!-- EXECUTIVE SUMMARY -->
@@ -310,7 +310,7 @@
   <!-- RISKS (ordered Critical -> Low) -->
   <section id="risks">
   <h2 class="section"><span class="bar" style="background:var(--crit)"></span>Ризики — від критичного до низького</h2>
-  <p class="section-desc">Усі 20 пунктів, позначені аудиторами (UHY + Baker McKenzie / Roman Koren), відсортовані за рівнем впливу. У шапці кожного — орієнтовна втрата в € (для 2027, виручка ~€400 тис).</p>
+  <p class="section-desc">Усі 20 пунктів, позначені аудиторами (UHY + Baker McKenzie / Roman Koren), відсортовані за рівнем впливу. У шапці кожного — орієнтовна втрата в € (для 2027, виручка ~€1,6 млн).</p>
 
   <!-- C1: Clause 2 -->
   <div class="card">
@@ -318,21 +318,21 @@
       <span class="clause-no">Пункт 2</span>
       <span class="title">Виконавець бере на себе всі негативні наслідки та потенційні ризики</span>
       <span class="badge b-crit">Критичний</span>
-      <span class="money-badge">Втрати: до ~€576 тис/рік (необмежено)</span>
+      <span class="money-badge">Втрати: до ~€2,3 млн/рік (необмежено)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня–висока</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v crit">Критичний</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v crit">Критичний</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€576 тис/рік</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€2,3 млн/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>«Виконавець бере на себе відповідальність за всі негативні наслідки та потенційні ризики, що будь-яким чином пов’язані, або можуть бути пов’язані із фінансово-господарськими відносинами між Замовником та Виконавцем за даним Договором.»</p></div>
         <div class="clause-box"><div class="lang">English</div><p>"The Contractor assumes responsibility for all negative consequences and potential risks that are in any way related, or may be related, to the financial and business relations between the Customer and the Contractor under this Agreement."</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Необмежений односторонній перенос податкової та господарської відповідальності на Bolt — відкрите «все охоплююче» зобов’язання.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Необмежена фінансова експозиція для Bolt, без ліміту відповідальності (найгірший випадок ~€576 тис/рік, але формально без стелі).</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Необмежена фінансова експозиція для Bolt, без ліміту відповідальності (найгірший випадок ~€2,3 млн/рік, але формально без стелі).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Односторонній перенос податкової відповідальності на Bolt → необмежена фінансова експозиція для Bolt.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик і оцінка:</b> Bolt стає квазі-поручителем за податкову експозицію контрагента щодо будь-яких порушень. Це суперечить постанові Верховного Суду від 06.02.2026 (№ 904/2953/24): контрактний перенос публічно-правової / податкової відповідальності <b>недійсний і не породжує правових наслідків</b>. <b>Вірогідність:</b> середня–висока (напр. незареєстрована податкова накладна, що впливає на ПК АТБ, найімовірніше призведе до судового спору).</p></div>
@@ -346,24 +346,24 @@
       <span class="clause-no">Пункт 2.1</span>
       <span class="title">Компенсація податків, штрафів, втраченого ПК та стягнення в бюджет</span>
       <span class="badge b-crit">Критичний</span>
-      <span class="money-badge">Втрати: до ~€552 тис/рік</span>
+      <span class="money-badge">Втрати: до ~€2,21 млн/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v crit">Критичний</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v crit">Критичний</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€552 тис/рік</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€2,21 млн/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Нарахування контролюючими органами податків, зборів, штрафних санкцій; зменшення податкового кредиту Замовника з ПДВ за податковими накладними Виконавця; та/або збільшення об’єкта оподаткування з податку на прибуток; або стягнення в дохід держави отриманого за угодою, визнаною недійсною.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Imposition by tax authorities of taxes, fees and penalties; reduction of the Customer's VAT input tax credit based on the Contractor's tax invoices; and/or increase of the Customer's taxable profit base; or a court decision ordering recovery to the state budget of amounts received under an agreement declared invalid.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Компенсація всіх податкових санкцій навіть за відсутності доведеної вини Bolt.</p>
-      <div class="impact"><span class="lab">Потенційний вплив (2027, ВП €400 тис)</span><ul>
-        <li>Втрачений ПК з ПДВ — <b>20% вартості послуг ≈ €80 тис</b> + штрафи / пеня (~€24 тис).</li>
-        <li>Збільшення бази податку на прибуток — <b>18% вартості послуг ≈ €72 тис</b>.</li>
-        <li>Стягнення в дохід держави — потенційно <b>100% виручки ≈ €400 тис</b>.</li>
+      <div class="impact"><span class="lab">Потенційний вплив (2027, ВП €1,6 млн)</span><ul>
+        <li>Втрачений ПК з ПДВ — <b>20% вартості послуг ≈ €320 тис</b> + штрафи / пеня (~€96 тис).</li>
+        <li>Збільшення бази податку на прибуток — <b>18% вартості послуг ≈ €288 тис</b>.</li>
+        <li>Стягнення в дохід держави — потенційно <b>100% виручки ≈ €1,6 млн</b>.</li>
       </ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Замовник визнає, що рішення податкових органів можуть бути визнані незаконними та скасовані; у такому разі повернення Виконавцю можливе, але лише після фактичного повернення коштів з бюджету Замовнику.</p></div>
@@ -378,21 +378,21 @@
       <span class="clause-no">Пункт 2, 4)</span>
       <span class="title">Відповідальність через кримінальне провадження (вирок не потрібен)</span>
       <span class="badge b-high">Високий</span>
-      <span class="money-badge">Втрати: призупинення оплат (до ~€400 тис виручки)</span>
+      <span class="money-badge">Втрати: призупинення оплат (до ~€1,6 млн виручки)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">призупинення до ~€400 тис</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">призупинення до ~€1,6 млн</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Відкриття кримінального провадження, де у будь-якому процесуальному статусі (або без такого) фігурує Виконавець або будь-яка з його посадових осіб (директор, бухгалтер) — за переліком статей Кримінального кодексу.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Negative consequences include the initiation of criminal proceedings in which the Contractor or any of its officers (director / general director, accountant / chief accountant) appears in any procedural status (or without any status).</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Наслідки (призупинення оплат, відповідальність) виникають навіть за відсутності вироку суду.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Немає прямого фіксованого штрафу; основна шкода — призупинення оплат (відтермінування до ~€400 тис виручки/рік) + репутаційний та операційний ризик.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Немає прямого фіксованого штрафу; основна шкода — призупинення оплат (відтермінування до ~€1,6 млн виручки/рік) + репутаційний та операційний ризик.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Наслідки навіть за відсутності вироку суду — репутаційний та операційний ризик.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> Несприятливі договірні наслідки можуть виникнути вже при <b>відкритті</b> кримінального провадження щодо Bolt або його посадових осіб, незалежно від результату — експозиція до призупинення оплат без чиєїсь кримінальної відповідальності. <b>Вірогідність:</b> середня–висока — провадження в Україні можуть залишатися відкритими тривалий час.</p></div>
@@ -406,21 +406,21 @@
       <span class="clause-no">Пункт 5</span>
       <span class="title">Компенсація ПДВ за заблоковані / зупинені податкові накладні</span>
       <span class="badge b-high">Високий</span>
-      <span class="money-badge">Втрати: ≥€20/документ; до ~€80 тис/рік</span>
+      <span class="money-badge">Втрати: ≥€20/документ; до ~€320 тис/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€80 тис/рік</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">до ~€320 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>У разі зупинки/відмови Замовнику в реєстрації розрахунку коригування (обов’язок реєстрації якого покладено на Замовника) внаслідок зупинки реєстрації податкової накладної — Виконавець сплачує штраф у розмірі ПДВ, але не менше 1 000 грн за кожне порушення.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Compensation of VAT amounts related to blocked tax invoices, despite the Contractor having no actual control over the suspension of tax-invoice registration.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Bolt штрафують за зупинку реєстрації державою — подію повністю поза його контролем.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф у розмірі суми ПДВ, але <b>не менше 1 000 грн (~€20)</b> за порушення; сукупно до ~€80 тис/рік (повна сума ПДВ від виручки).</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Штраф у розмірі суми ПДВ, але <b>не менше 1 000 грн (~€20)</b> за порушення; сукупно до ~€320 тис/рік (повна сума ПДВ від виручки).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Компенсація ПДВ за заблоковані податкові накладні, попри відсутність у Виконавця реального контролю над зупинкою реєстрації.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Оцінка:</b> Штраф 1% від суми ПДВ (плюс фіксовані суми). <b>Каральний за природою</b> та несумісний з позицією Верховного Суду, наведеною для Пункту 2 (перенос податкової відповідальності недійсний). <b>Вірогідність:</b> середня–висока.</p></div>
@@ -434,21 +434,21 @@
       <span class="clause-no">Пункт 5 (365 днів)</span>
       <span class="title">Компенсація за помилки, виявлені після 365 днів</span>
       <span class="badge b-high">Високий</span>
-      <span class="money-badge">Втрати: до ~€80–100 тис/рік</span>
+      <span class="money-badge">Втрати: до ~€320–400 тис/рік</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v low">Низька–середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v high">Високий</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v high">Високий</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€80–100 тис/рік</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€320–400 тис/рік</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Якщо на момент виявлення помилки минуло більше 365 днів з дати складення податкової накладної/розрахунку коригування, і це призвело до втрати Замовником податкового кредиту та донарахувань — Виконавець компенсує повну суму втраченого ПК та всі податки, збори, штрафи і пеню.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>Where more than 365 days have passed since issuance of the tax invoice / adjustment when an error is identified, and this causes the Customer to lose VAT credit and incur additional assessments, the Contractor must fully compensate the lost VAT credit and all taxes, fees, penalties and interest.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Штрафи за технічні помилки, які жодна зі сторін не виявила вчасно.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>20% вартості послуг ≈ €80 тис</b> (повна сума ПДВ) + штрафи / пеня (~€20 тис).</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li><b>20% вартості послуг ≈ €320 тис</b> (повна сума ПДВ) + штрафи / пеня (~€80 тис).</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Штрафи за потенційні технічні помилки, які не були вчасно виявлені ні Виконавцем, ні Замовником.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Оцінка:</b> Те саме занепокоєння, що й щодо інших штрафних пунктів — <b>каральні штрафи</b>, несумісні з позицією Верховного Суду, наведеною для Пункту 2. <b>Вірогідність:</b> середня–висока.</p></div>
@@ -462,21 +462,21 @@
       <span class="clause-no">Пункт 2.2 / 2.3</span>
       <span class="title">Призупинення оплат Замовником</span>
       <span class="badge b-med">Середній–високий</span>
-      <span class="money-badge">Втрати: відтермінування до ~€400 тис виручки</span>
+      <span class="money-badge">Втрати: відтермінування до ~€1,6 млн виручки</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v high">Висока</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v med">Середній–високий</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">відтермінування до ~€400 тис</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">відтермінування до ~€1,6 млн</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>Строк оплати відтерміновується до моменту остаточного усунення негативних наслідків та потенційних ризиків; таке відтермінування не вважається порушенням зобов’язань Замовника з оплати.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>The payment term is deferred until the negative consequences / potential risks are fully eliminated; such deferral is deemed not to be a breach of the Customer's payment obligation.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> Замовник фактично заморожує оплати на власний розсуд, без відповідальності за прострочення.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку — оплати (до ~€400 тис виручки/рік) утримуються на невизначений строк.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку — оплати (до ~€1,6 млн виручки/рік) утримуються на невизначений строк.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Призупинення оплат — Замовник фактично заморожує платежі → ризик грошового потоку.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p><b>Ризик:</b> АТБ може призупиняти оплати за широко й суб’єктивно визначеними підставами, на <b>невизначений строк, що залежить від третіх осіб</b> (податкова, суди), попри належне виконання з боку Bolt. <b>Вірогідність:</b> висока — поріг для призупинення широкий і суб’єктивний.</p></div>
@@ -490,21 +490,21 @@
       <span class="clause-no">Пункт 6</span>
       <span class="title">20% оплати відтерміновано до реєстрації податкової накладної</span>
       <span class="badge b-med">Середній</span>
-      <span class="money-badge">Втрати: відтермінування ~€80 тис/рік (20%)</span>
+      <span class="money-badge">Втрати: відтермінування ~€320 тис/рік (20%)</span>
     </div>
     <div class="body">
       <div class="ratings">
         <div class="rate"><span class="k">Вірогідність</span><span class="v med">Середня</span></div>
         <div class="rate"><span class="k">Вплив</span><span class="v med">Середній</span></div>
         <div class="rate"><span class="k">Загалом</span><span class="v med">Середній</span></div>
-        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€80 тис/рік (відтерм.)</span></div>
+        <div class="rate money"><span class="k">Втрати (2027)</span><span class="v">~€320 тис/рік (відтерм.)</span></div>
       </div>
       <div class="clause-cols">
         <div class="clause-box"><div class="lang">Українською</div><p>80% вартості сплачується протягом ___ днів від дати виконання; решта 20% — протягом 3 днів від дати виконання Виконавцем зобов’язання з реєстрації податкових накладних/розрахунків коригування.</p></div>
         <div class="clause-box"><div class="lang">English</div><p>80% of the service value is paid within ___ calendar days of completion; the remaining 20% within 3 days from the date the Contractor registers the tax invoices / adjustment calculations.</p></div>
       </div>
       <p class="risk-line"><b>Ризик:</b> 20% затримується, якщо реєстрацію в Єдиному реєстрі зупинено або відмовлено — хоча Bolt це прямо не контролює.</p>
-      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку на 20% кожної накладної ≈ <b>~€80 тис/рік</b> (20% від виручки), тимчасово відтерміновано.</li></ul></div>
+      <div class="impact"><span class="lab">Потенційний вплив</span><ul><li>Ризик грошового потоку на 20% кожної накладної ≈ <b>~€320 тис/рік</b> (20% від виручки), тимчасово відтерміновано.</li></ul></div>
       <div class="comments">
         <div class="cbox c-uhy"><div class="head"><span class="dot"></span>Коментар UHY</div><p>Bolt не має прямого контролю над зупинкою чи відмовою в реєстрації податкових накладних в Єдиному реєстрі.</p></div>
         <div class="cbox c-baker"><div class="head"><span class="dot"></span>Коментар Baker McKenzie</div><p>Це радше <b>комерційний / бізнес-ризик</b> відтермінування оплат (не юридичний ризик).</p></div>
