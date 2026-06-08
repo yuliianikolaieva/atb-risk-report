@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATB Additional Agreement — Executive One-Pager</title>
+<style>
+  :root{
+    --bg:#eef1f7; --panel:#ffffff; --line:#dfe5ee; --text:#13203a; --muted:#5d6b85; --soft:#33425d;
+    --accent:#2563eb; --accent2:#0e7faa; --crit:#dc2626; --high:#ea580c; --low:#15a34a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--text);line-height:1.5}
+  nav.topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.topnav .inner{max-width:900px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  nav.topnav .brand{font-weight:800;font-size:13px;color:var(--accent2);margin-right:8px}
+  nav.topnav a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 11px;border-radius:8px;border:1px solid transparent}
+  nav.topnav a:hover{background:#eef2f8;color:var(--text);border-color:var(--line)}
+  nav.topnav .right{margin-left:auto;display:flex;gap:8px}
+  .dl{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+  .dl:hover{filter:brightness(1.08)}
+  .dl.alt{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+
+  .wrap{max-width:900px;margin:0 auto;padding:26px 20px 70px}
+  .sheet{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:34px 40px;box-shadow:0 1px 4px rgba(20,40,80,.06)}
+  h1{font-size:23px;margin:0 0 2px}
+  .subtitle{color:var(--muted);font-size:13px;margin:0 0 18px}
+  h2{font-size:15px;margin:22px 0 7px;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:4px}
+  p{margin:7px 0;font-size:13.5px;color:var(--soft)}
+  ul{margin:6px 0;padding-left:20px;font-size:13.5px;color:var(--soft)}
+  li{margin:4px 0}
+  b{color:var(--text)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .box{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .box.warn{border-left:4px solid var(--crit);background:rgba(220,38,38,.04)}
+  .box.ok{border-left:4px solid var(--low);background:rgba(21,163,74,.05)}
+  .box h3{margin:0 0 6px;font-size:14px}
+  .box.warn h3{color:var(--crit)} .box.ok h3{color:var(--low)}
+  .fig{font-size:20px;font-weight:800;color:var(--crit);margin:6px 0}
+  .fig.ok{color:var(--low)}
+  .statement{background:#eef3fb;border:1px solid #d4e2f7;border-radius:10px;padding:14px 18px;margin-top:18px}
+  .statement .lab{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:800}
+  .statement p{font-size:15px;color:var(--text);font-weight:600;margin:6px 0 0}
+  table.appr{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+  table.appr td,table.appr th{border:1px solid var(--line);padding:9px 12px;text-align:left}
+  table.appr th{background:#f1f5fb;color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+  .chk{font-size:18px;color:var(--muted)}
+  .note{color:var(--muted);font-size:11.5px;margin-top:16px}
+  @media(max-width:680px){ .two{grid-template-columns:1fr} .sheet{padding:22px} }
+  @media print{ nav.topnav{display:none} body{background:#fff} .sheet{border:none;box-shadow:none;border-radius:0;padding:0} }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">ATB · One-pager</span>
+    <a href="index.html">← Full report (УКР)</a>
+    <a href="index-en.html">Full report (ENG)</a>
+    <span class="right">
+      <button class="dl" id="dlDoc">⬇ Download (.doc for Google Docs)</button>
+      <button class="dl alt" onclick="window.print()">Print / PDF</button>
+    </span>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="sheet" id="memo">
+    <h1>ATB Additional Agreement — Decision Memo</h1>
+    <p class="subtitle">Confidential · For management approval · Bolt Operations Ukraine × LLC «ATB-MARKET» · June 2026</p>
+
+    <h2>1. Context</h2>
+    <ul>
+      <li><b>ATB is the #1 national retail chain in Ukraine</b> — ~<b>50% of the modern grocery market</b>, ~1,300+ stores nationwide — and a major growth opportunity for Bolt Food.</li>
+      <li><b>ATB does not make exceptions.</b> All partners operate under ATB's standard flow and documents; the additional agreement is effectively <b>non-negotiable</b> — everyone signs the same terms.</li>
+    </ul>
+
+    <h2>2. What the agreement is</h2>
+    <p>An Additional Agreement to the services contract that shifts <b>tax, criminal-procedure and registration risk onto Bolt</b> (as Contractor), with broad one-sided liability and a set of penalties. <b>20 clauses</b> were flagged by auditors (UHY + Baker McKenzie). The penalty base is Bolt's <b>service value</b> = revenue from ATB = <b>13.33% of GMV</b> (3.33% commission + 10% service fee).</p>
+
+    <div class="two">
+      <div class="box warn">
+        <h3>Scenario A — Worst case (all risks materialise)</h3>
+        <div class="fig">≈ €2.3M / yr (2027)</div>
+        <ul>
+          <li>≈ <b>144% of Bolt's revenue</b> (service value), ≈ <b>19% of GMV</b>.</li>
+          <li>Cumulative 2026–2027 ≈ <b>€3.1M</b>.</li>
+          <li><b>P&amp;L:</b> the ATB deal becomes <b>loss-making</b> — we pay out more than we earn from the client.</li>
+          <li>Drivers: unlimited liability (Cl. 2 / 2.1), VAT (20%) + CIT (18%) compensation + budget recovery (100%), payment suspension, criminal-proceedings trigger.</li>
+        </ul>
+      </div>
+      <div class="box ok">
+        <h3>Scenario B — Base case (mitigated)</h3>
+        <div class="fig ok">≈ €10–50k / yr</div>
+        <p style="margin:4px 0 6px">Residual, realistically enforceable exposure. We accept and mitigate because:</p>
+        <ul>
+          <li><b>10-year track record</b> — not a single such case has occurred.</li>
+          <li><b>Clear UHY algorithm</b> — defined working process with UHY, who become <b>partly responsible</b> for these clauses.</li>
+          <li><b>Fast-reaction flow</b> — at the first sign of any risk we <b>block/suspend work</b> until it is clarified.</li>
+          <li><b>Court practice</b> — enforcement is effectively impossible; the underlying law is disputable (Supreme Court, 06.02.2026, No. 904/2953/24: contractual transfer of tax liability is invalid).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="statement">
+      <span class="lab">Recommendation — GM &amp; Team Lead</span>
+      <p>We recommend <b>signing the agreement in its current edition this week</b> and moving forward. ATB's strategic value (national scale, ~50% market) clearly outweighs the residual legal risk, which is largely unenforceable and further contained by the mitigations above.</p>
+    </div>
+
+    <h2>3. Approval</h2>
+    <table class="appr">
+      <tr><th style="width:42px">✓</th><th>Approver</th><th style="width:34%">Signature / date</th></tr>
+      <tr><td class="chk">☐</td><td>Viacheslav Levchenko</td><td>&nbsp;</td></tr>
+      <tr><td class="chk">☐</td><td>Ivan Grynchyk</td><td>&nbsp;</td></tr>
+      <tr><td class="chk">☐</td><td>Audrey Ceuppens</td><td>&nbsp;</td></tr>
+      <tr><td class="chk">☐</td><td>Marketa Hlavakova</td><td>&nbsp;</td></tr>
+    </table>
+
+    <p class="note">Indicative figures for management discussion; not legal or tax advice. VAT 20%, CIT 18%, FX €1 ≈ UAH 51. Full clause-by-clause analysis (UHY + Baker McKenzie comments) and financial model: see the full report.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  document.getElementById('dlDoc').onclick=function(){
+    var inner=document.getElementById('memo').innerHTML;
+    var head='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>ATB Additional Agreement — Decision Memo</title>'+
+      '<style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#13203a} h1{font-size:17pt} h2{font-size:12pt;color:#1f4e9e;border-bottom:1px solid #ccc} h3{font-size:11pt} table{border-collapse:collapse;width:100%} td,th{border:1px solid #999;padding:6px}</style></head><body>';
+    var html=head+inner+'</body></html>';
+    var blob=new Blob(['\ufeff',html],{type:'application/msword'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='ATB-Additional-Agreement-OnePager.doc';
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+})();
+</script>
+</body>
+</html>
